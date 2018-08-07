@@ -453,7 +453,7 @@ doors.register("door_white", {
 		description = "White Door",
 wield_image = "color_handwhite.png",
 wield_scale = {x=2,y=1.5,z=0.2},
-		 inventory_image = "doors_item_red.png",
+		 inventory_image = "doors_item_white.png",
 		groups = {cracky=3},
 		sounds = default.node_sound_glass_defaults(),
 		sound_open = "doors_glass_door_open",
