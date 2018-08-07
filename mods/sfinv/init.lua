@@ -10,8 +10,9 @@ sfinv.register_page("sfinv:crafting", {
 		image_button[2,0;1,1;slabs.png;slabs;]
 	  image_button[3,0;1,1;windows.png;windows;]
 	  image_button[4,0;1,1;lights.png;lights;]
-	--  image_button[5,0;1,1;waters.png;waters;]
-		 		
+	  image_button[5,0;1,1;waters.png;waters;]
+	  image_button[6,0;1,1;doors.png;doors;]
+				
 			]], true)
 	end
 })

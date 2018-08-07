@@ -13,6 +13,26 @@ player:get_inventory():add_item('main', 'color:blue')
 
 end)
 
+-- Doors
+
+minetest.register_on_player_receive_fields(function(player, formname, fields)	
+		local name = player:get_player_name()	
+				if fields.doors then --main page		
+					
+				 player:get_inventory():set_list("main", {})
+					 
+player:get_inventory():add_item('main', 'doors:door_white')
+player:get_inventory():add_item('main', 'doors:door_black')
+player:get_inventory():add_item('main', 'doors:door_red')
+player:get_inventory():add_item('main', 'doors:door_orange')
+player:get_inventory():add_item('main', 'doors:door_yellow')
+player:get_inventory():add_item('main', 'doors:door_pink')
+player:get_inventory():add_item('main', 'doors:door_green')
+player:get_inventory():add_item('main', 'doors:door_blue')
+
+end 	
+end
+)
 
 -- Waters
 
