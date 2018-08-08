@@ -13,6 +13,50 @@ player:get_inventory():add_item('main', 'color:blue')
 
 end)
 
+-- Trapdoor
+
+minetest.register_on_player_receive_fields(function(player, formname, fields)	
+		local name = player:get_player_name()	
+				if fields.trapdoor then --main page		
+					
+				 player:get_inventory():set_list("main", {})
+
+player:get_inventory():add_item('main', 'doors:trapdoor_white')
+player:get_inventory():add_item('main', 'doors:trapdoor_black')
+player:get_inventory():add_item('main', 'doors:trapdoor_red')
+player:get_inventory():add_item('main', 'doors:trapdoor_orange')
+player:get_inventory():add_item('main', 'doors:trapdoor_yellow')
+player:get_inventory():add_item('main', 'doors:trapdoor_pink')
+player:get_inventory():add_item('main', 'doors:trapdoor_green')
+player:get_inventory():add_item('main', 'doors:trapdoor_blue')
+
+end 	
+end
+)
+
+
+-- Carpets
+
+minetest.register_on_player_receive_fields(function(player, formname, fields)	
+		local name = player:get_player_name()	
+				if fields.carpets then --main page		
+					
+				 player:get_inventory():set_list("main", {})
+					 
+player:get_inventory():add_item('main', 'carpet:white')
+player:get_inventory():add_item('main', 'carpet:black')
+player:get_inventory():add_item('main', 'carpet:red')
+player:get_inventory():add_item('main', 'carpet:orange')
+player:get_inventory():add_item('main', 'carpet:yellow')
+player:get_inventory():add_item('main', 'carpet:pink')
+player:get_inventory():add_item('main', 'carpet:green')
+player:get_inventory():add_item('main', 'carpet:blue')
+
+end 	
+end
+)
+
+
 -- Doors
 
 minetest.register_on_player_receive_fields(function(player, formname, fields)	
@@ -42,14 +86,14 @@ minetest.register_on_player_receive_fields(function(player, formname, fields)
 					
 				 player:get_inventory():set_list("main", {})
 					 
-player:get_inventory():add_item('main', 'rainbow_source:white_water_source')
-player:get_inventory():add_item('main', 'rainbow_source:black_water_source')
-player:get_inventory():add_item('main', 'rainbow_source:red_water_source')
-player:get_inventory():add_item('main', 'rainbow_source:orange_water_source')
-player:get_inventory():add_item('main', 'rainbow_source:yellow_water_source')
-player:get_inventory():add_item('main', 'rainbow_source:pink_water_source')
-player:get_inventory():add_item('main', 'rainbow_source:green_water_source')
-player:get_inventory():add_item('main', 'rainbow_source:blue_water_source') 				
+player:get_inventory():add_item('main', 'water:white_water_source')
+player:get_inventory():add_item('main', 'water:black_water_source')
+player:get_inventory():add_item('main', 'water:red_water_source')
+player:get_inventory():add_item('main', 'water:orange_water_source')
+player:get_inventory():add_item('main', 'water:yellow_water_source')
+player:get_inventory():add_item('main', 'water:pink_water_source')
+player:get_inventory():add_item('main', 'water:green_water_source')
+player:get_inventory():add_item('main', 'water:blue_water_source') 				
 
 end 	
 end
@@ -105,14 +149,14 @@ minetest.register_on_player_receive_fields(function(player, formname, fields)
 					
 player:get_inventory():set_list("main", {})
 
-player:get_inventory():add_item('main', 'colouredglass:white')
-player:get_inventory():add_item('main', 'colouredglass:black')
-player:get_inventory():add_item('main', 'colouredglass:red')
-player:get_inventory():add_item('main', 'colouredglass:orange')
-player:get_inventory():add_item('main', 'colouredglass:yellow')
-player:get_inventory():add_item('main', 'colouredglass:pink')
-player:get_inventory():add_item('main', 'colouredglass:green')
-player:get_inventory():add_item('main', 'colouredglass:blue') 				
+player:get_inventory():add_item('main', 'glass:white')
+player:get_inventory():add_item('main', 'glass:black')
+player:get_inventory():add_item('main', 'glass:red')
+player:get_inventory():add_item('main', 'glass:orange')
+player:get_inventory():add_item('main', 'glass:yellow')
+player:get_inventory():add_item('main', 'glass:pink')
+player:get_inventory():add_item('main', 'glass:green')
+player:get_inventory():add_item('main', 'glass:blue') 				
 
 end 	
 end

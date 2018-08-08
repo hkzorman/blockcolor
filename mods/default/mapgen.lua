@@ -6,15 +6,15 @@ minetest.register_alias("mapgen_stone", "color:black")
 minetest.register_alias("mapgen_dirt", "color:orange")
 minetest.register_alias("mapgen_dirt_with_grass", "color:green")
 minetest.register_alias("mapgen_sand", "color:yellow")
-minetest.register_alias("mapgen_water_source", "rainbow_source:blue_water_source")
-minetest.register_alias("mapgen_river_water_source", "rainbow_source:blue_water_source")
-minetest.register_alias("mapgen_lava_source", "rainbow_source:red_water_source")
+minetest.register_alias("mapgen_water_source", "water:blue_water_source")
+minetest.register_alias("mapgen_river_water_source", "water:blue_water_source")
+minetest.register_alias("mapgen_lava_source", "water:red_water_source")
 minetest.register_alias("mapgen_gravel", "color:black")
 minetest.register_alias("mapgen_desert_stone", "color:black")
 minetest.register_alias("mapgen_desert_sand", "color;yellow")
 minetest.register_alias("mapgen_dirt_with_snow", "color:white")
 minetest.register_alias("mapgen_snowblock", "color:white")
-minetest.register_alias("mapgen_snow", "color:white")
+minetest.register_alias("mapgen_snow", "carpet:white")
 minetest.register_alias("mapgen_ice", "color:blue")
 minetest.register_alias("mapgen_sandstone", "color:orange")
 
@@ -264,7 +264,7 @@ function default.register_biomes(upper_limit)
 		node_filler = "color:white",
 		depth_filler = 3,
 		node_stone = "color:blue",
-		node_water_top = "rainbow_source:blue_water_source",
+		node_water_top = "water:blue_water_source",
 		depth_water_top = 10,
 		--node_water = "",
 		node_river_water = "color:blue",
@@ -284,7 +284,7 @@ function default.register_biomes(upper_limit)
 		node_filler = "color:yellow",
 		depth_filler = 3,
 		--node_stone = "",
-		node_water_top = "rainbow_source:blue_water_source",
+		node_water_top = "water:blue_water_source",
 		depth_water_top = 10,
 		--node_water = "",
 		--node_river_water = "",
@@ -344,7 +344,7 @@ function default.register_biomes(upper_limit)
 		node_filler = "color:yellow",
 		depth_filler = 3,
 		--node_stone = "",
-	   node_water_top = "rainbow_source:blue_water_source",
+	   node_water_top = "water:blue_water_source",
 		depth_water_top = 10,
 		--node_water = "",
 		--node_river_water = "",
@@ -386,7 +386,7 @@ function default.register_biomes(upper_limit)
 		node_filler = "color:yellow",
 		depth_filler = 3,
 		--node_stone = "",
-     node_water_top = "rainbow_source:blue_water_source",
+     node_water_top = "water:blue_water_source",
 		depth_water_top = 10,
 		--node_water = "",
 		--node_river_water = "",
@@ -428,7 +428,7 @@ function default.register_biomes(upper_limit)
 		node_filler = "color:yellow",
 		depth_filler = 3,
 		--node_stone = "",
-		 node_water_top = "rainbow_source:blue_water_source",
+		 node_water_top = "water:blue_water_source",
 		depth_water_top = 10,
 		--node_water = "",
 		--node_river_water = "",
@@ -490,7 +490,7 @@ function default.register_biomes(upper_limit)
 		node_filler = "color:yellow",
 		depth_filler = 3,
 		--node_stone = "",
-		 node_water_top = "rainbow_source:blue_water_source",
+		 node_water_top = "water:blue_water_source",
 		depth_water_top = 10,
 		--node_water = "",
 		--node_river_water = "",
@@ -552,7 +552,7 @@ function default.register_biomes(upper_limit)
 		node_filler = "color:yellow",
 		depth_filler = 3,
 		--node_stone = "",
-		 node_water_top = "rainbow_source:blue_water_source",
+		 node_water_top = "water:blue_water_source",
 		depth_water_top = 10,
 		--node_water = "",
 		--node_river_water = "",
@@ -614,7 +614,7 @@ function default.register_biomes(upper_limit)
 		node_filler = "color:yellow",
 		depth_filler = 3,
 		--node_stone = "",
-		 node_water_top = "rainbow_source:blue_water_source",
+		 node_water_top = "water:blue_water_source",
 		depth_water_top = 10,
 		--node_water = "",
 		--node_river_water = "",
@@ -656,7 +656,7 @@ function default.register_biomes(upper_limit)
 		node_filler = "color:yellow",
 		depth_filler = 3,
 		node_stone = "color:orange",
-	 node_water_top = "rainbow_source:blue_water_source",
+	 node_water_top = "water:blue_water_source",
 		depth_water_top = 10,
 		--node_water = "",
 		--node_river_water = "",
@@ -698,7 +698,7 @@ function default.register_biomes(upper_limit)
 		node_filler = "color:yellow",
 		depth_filler = 3,
 		node_stone = "color:orange",
-	 node_water_top = "rainbow_source:blue_water_source",
+	 node_water_top = "water:blue_water_source",
 		depth_water_top = 10,
 		--node_water = "",
 		--node_river_water = "",
@@ -740,7 +740,7 @@ function default.register_biomes(upper_limit)
 		node_filler = "color:yellow",
 		depth_filler = 3,
 		--node_stone = "",
-		 node_water_top = "rainbow_source:blue_water_source",
+		 node_water_top = "water:blue_water_source",
 		depth_water_top = 10,
 		--node_water = "",
 		--node_river_water = "",
@@ -802,7 +802,7 @@ function default.register_biomes(upper_limit)
 		node_filler = "color:yellow",
 		depth_filler = 3,
 		--node_stone = "",
-		 node_water_top = "rainbow_source:blue_water_source",
+		 node_water_top = "water:blue_water_source",
 		depth_water_top = 10,
 		--node_water = "",
 		--node_river_water = "",
@@ -864,7 +864,7 @@ function default.register_biomes(upper_limit)
 		node_filler = "color:yellow",
 		depth_filler = 3,
 		--node_stone = "",
-		 node_water_top = "rainbow_source:blue_water_source",
+		 node_water_top = "water:blue_water_source",
 		depth_water_top = 10,
 		--node_water = "",
 		--node_river_water = "",

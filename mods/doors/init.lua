@@ -713,10 +713,74 @@ end
 
 doors.register_trapdoor("doors:trapdoor_white", {
 	description = "Trapdoor",
-	inventory_image = "doors_trapdoor_white.png",
-	wield_image = "doors_trapdoor_white.png",
-	tile_front = "doors_trapdoor_white.png",
-	tile_side = "doors_trapdoor_side_white.png",
+	tile_front = "color_white.png",
+	tile_side = "color_white.png",
+   wield_image = "color_handwhite.png",
+   wield_scale = {x=2,y=1.5,z=0.2},
+	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2, door = 1},
+})
+
+doors.register_trapdoor("doors:trapdoor_blue", {
+	description = "Trapdoor",
+	tile_front = "color_blue.png",
+	tile_side = "color_blue.png",
+wield_image = "color_handblue.png",
+   wield_scale = {x=2,y=1.5,z=0.2},
+	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2, door = 1},
+})
+
+doors.register_trapdoor("doors:trapdoor_green", {
+	description = "Trapdoor",
+	tile_front = "color_green.png",
+	tile_side = "color_green.png",
+wield_image = "color_handgreen.png",
+   wield_scale = {x=2,y=1.5,z=0.2},
+	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2, door = 1},
+})
+
+doors.register_trapdoor("doors:trapdoor_red", {
+	description = "Trapdoor",
+	tile_front = "color_red.png",
+	tile_side = "color_red.png",
+wield_image = "color_handred.png",
+   wield_scale = {x=2,y=1.5,z=0.2},
+	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2, door = 1},
+})
+
+doors.register_trapdoor("doors:trapdoor_orange", {
+	description = "Trapdoor",
+	tile_front = "color_orange.png",
+	tile_side = "color_orange.png",
+wield_image = "color_handorange.png",
+   wield_scale = {x=2,y=1.5,z=0.2},
+	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2, door = 1},
+})
+
+
+doors.register_trapdoor("doors:trapdoor_yellow", {
+	description = "Trapdoor",
+	tile_front = "color_yellow.png",
+	tile_side = "color_yellow.png",
+wield_image = "color_handyellow.png",
+   wield_scale = {x=2,y=1.5,z=0.2},
+	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2, door = 1},
+})
+
+doors.register_trapdoor("doors:trapdoor_pink", {
+	description = "Trapdoor",
+	tile_front = "color_pink.png",
+	tile_side = "color_pink.png",
+wield_image = "color_handpink.png",
+   wield_scale = {x=2,y=1.5,z=0.2},
+	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2, door = 1},
+})
+
+doors.register_trapdoor("doors:trapdoor_black", {
+	description = "Trapdoor",
+	tile_front = "color_black.png",
+	tile_side = "color_black.png",
+wield_image = "color_handblack.png",
+   wield_scale = {x=2,y=1.5,z=0.2},
 	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2, door = 1},
 })
 
@@ -804,7 +868,7 @@ function doors.register_fencegate(name, def)
 	})
 end
 
-doors.register_fencegate("doors:white", {
+doors.register_fencegate("doors_smallwhite", {
 	description = "White Fence Gate",
 	texture = "color_white.png",
 	material = "color:white",
