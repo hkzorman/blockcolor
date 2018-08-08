@@ -13,6 +13,28 @@ player:get_inventory():add_item('main', 'color:blue')
 
 end)
 
+-- Fence
+
+minetest.register_on_player_receive_fields(function(player, formname, fields)	
+		local name = player:get_player_name()	
+				if fields.fence then --main page		
+					
+				 player:get_inventory():set_list("main", {})
+
+player:get_inventory():add_item('main', 'fence:white')
+player:get_inventory():add_item('main', 'fence:black')
+player:get_inventory():add_item('main', 'fence:red')
+player:get_inventory():add_item('main', 'fence:orange')
+player:get_inventory():add_item('main', 'fence:yellow')
+player:get_inventory():add_item('main', 'fence:pink')
+player:get_inventory():add_item('main', 'fence:green')
+player:get_inventory():add_item('main', 'fence:blue')
+
+end 	
+end
+)
+
+
 -- Trapdoor
 
 minetest.register_on_player_receive_fields(function(player, formname, fields)	

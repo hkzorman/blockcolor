@@ -14,6 +14,7 @@ sfinv.register_page("sfinv:crafting", {
 	  image_button[6,0;1,1;doors.png;doors;]
      image_button[7,0;1,1;carpets.png;carpets;] 	
      image_button[0,1;1,1;trapdoor.png;trapdoor;]
+     image_button[1,1;1,1;fence.png;fence;]
    
 			]], true)
 	end
