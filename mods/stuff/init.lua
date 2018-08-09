@@ -13,6 +13,27 @@ player:get_inventory():add_item('main', 'color:blue')
 
 end)
 
+-- Mobs
+
+minetest.register_on_player_receive_fields(function(player, formname, fields)	
+		local name = player:get_player_name()	
+				if fields.mobs then --main page		
+					
+				 player:get_inventory():set_list("main", {})
+
+player:get_inventory():add_item('main', 'ccmobs:white_block')
+player:get_inventory():add_item('main', 'ccmobs:black_block')
+player:get_inventory():add_item('main', 'ccmobs:red_block')
+player:get_inventory():add_item('main', 'ccmobs:orange_block')
+player:get_inventory():add_item('main', 'ccmobs:yellow_block')
+player:get_inventory():add_item('main', 'ccmobs:pink_block')
+player:get_inventory():add_item('main', 'ccmobs:green_block')
+player:get_inventory():add_item('main', 'ccmobs:blue_block')
+
+end 	
+end
+)
+
 -- Fence
 
 minetest.register_on_player_receive_fields(function(player, formname, fields)	
