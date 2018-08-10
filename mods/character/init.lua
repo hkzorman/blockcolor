@@ -333,6 +333,8 @@ minetest.register_chatcommand("skin", {
 		minetest.after(0.5, function()
 			local player = minetest.get_player_by_name(name)
 			if player then
+player:set_eye_offset({x=-10, y=10, z=-5}, {x=10, y=15, z=5})
+
 				show_formspec(player)
 			end
 		end)
