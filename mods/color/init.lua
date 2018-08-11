@@ -14,7 +14,7 @@ for i = 1, #dyes do
 
 	minetest.register_node("color:" .. name, {
 		description = desc .. " color",
-		wield_image = "color_hand" .. name .. ".png",
+		wield_image = "color_no.png",
 		wield_scale = {x=2,y=1.5,z=0.2},
 		tiles = {"color_" .. name .. ".png"},
 		is_ground_content = true,

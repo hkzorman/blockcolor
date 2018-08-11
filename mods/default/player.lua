@@ -16,16 +16,16 @@ end
 
 -- Default player appearance
 default.player_register_model("character.b3d", {
-	animation_speed = 30,
+	animation_speed = 60,
 	textures = {"character.png", },
 	animations = {
 		-- Standard animations.
-		stand     = { x=  0, y= 79, },
-		lay       = { x=162, y=166, },
-		walk      = { x=168, y=187, },
-		mine      = { x=189, y=198, },
-		walk_mine = { x=200, y=219, },
-		sit       = { x= 81, y=160, },
+		stand     = { x=  0, y= 0, },
+		lay       = { x=0, y=0, },
+		walk      = { x=10, y=70, },
+		mine      = { x=80, y=120, },
+		walk_mine = { x=0, y=0, },
+		sit       = { x= 0, y=0, },
 	},
 })
 
@@ -57,7 +57,7 @@ function default.player_set_model(player, model_name)
 			mesh = model_name,
 			textures = player_textures[name] or model.textures,
 			visual = "mesh",
-			visual_size = model.visual_size or {x=1, y=1},
+			visual_size = model.visual_size or {x=2, y=2},
 		})
 		default.player_set_animation(player, "stand")
 	else
@@ -93,7 +93,7 @@ end
 minetest.register_on_joinplayer(function(player)
 	default.player_attached[player:get_player_name()] = false
 	default.player_set_model(player, "character.b3d")
-	player:set_local_animation({x=0, y=79}, {x=168, y=187}, {x=189, y=198}, {x=200, y=219}, 30)
+	player:set_local_animation({x=0, y=0}, {x=0, y=0}, {x=0, y=0}, {x=0, y=0}, 0)
 
 	player:hud_set_hotbar_image("gui_hotbar.png")
 	player:hud_set_hotbar_selected_image("gui_hotbar_selected.png")
