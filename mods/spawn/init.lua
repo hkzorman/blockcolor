@@ -1,10 +1,7 @@
 
 spawn_command = {} 
-spawn_command.pos = {x=35, y=16, z=70}
 
-if minetest.setting_get_pos("static_spawnpoint") then
     spawn_command.pos = minetest.setting_get_pos("static_spawnpoint")
-end
 
 function teleport_to_spawn(name)
     local player = minetest.get_player_by_name(name)
@@ -12,8 +9,9 @@ function teleport_to_spawn(name)
         -- just a check to prevent the server crashing
         return false
     end
+
     local pos = player:getpos()
-    if pos.x>-20 and pos.x<20 and pos.z>-20 and pos.z<20 then
+    if pos.x>-10 and pos.x<10 and pos.z>-10 and pos.z<10 then
         minetest.chat_send_player(name, "Already close to spawn!")
     elseif _G['cursed_world'] ~= nil and    --check global table for cursed_world mod
         cursed_world.location_y and cursed_world.dimension_y and
