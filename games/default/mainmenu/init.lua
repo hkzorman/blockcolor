@@ -22,6 +22,7 @@ mt_color_dark_green = "#25C191"
 
 --for all other colors ask sfan5 to complete his work!
 
+local custompath = core.get_gamepath()
 local menupath = core.get_mainmenu_path()
 local basepath = core.get_builtin_path()
 defaulttexturedir = core.get_texturepath_share() .. DIR_DELIM .. "base" .. DIR_DELIM
@@ -50,8 +51,8 @@ end
 local tabs = {}
 
 --tabs.mods = dofile(menupath .. DIR_DELIM .. "tab_mods.lua")
-tabs.credits = dofile(menupath .. DIR_DELIM .. "tab_credits2.lua")
-tabs.local_game = dofile(menupath .. DIR_DELIM .. "tab_local2.lua")
+tabs.credits = dofile(custompath .. DIR_DELIM .. "default" .. DIR_DELIM .. "mainmenu" .. DIR_DELIM .. "tab_credits2.lua")
+tabs.local_game = dofile(custompath .. DIR_DELIM .. "default" .. DIR_DELIM .. "mainmenu" .. DIR_DELIM .. "tab_local2.lua")
 tabs.play_online = dofile(menupath .. DIR_DELIM .. "tab_online.lua")
 tabs.settings = dofile(menupath .. DIR_DELIM .. "tab_settings.lua")
 --tabs.server = dofile(menupath .. DIR_DELIM .. "tab_server.lua")
