@@ -24,7 +24,7 @@ local corner = copy_node(plotborder)
 local cornerplayer = {}
 
 local function ownerformspec(meta)
-  return "size[1.7,8.2]" ..
+  return "size[6,8.2]" ..
          "label[0.33,0;Plotsettings]" ..
          "label[0.25,0.6;Add Members]" ..
          "field[0.31,1.2;1.69,1;plot_system_corner_addfield;;]" ..
@@ -45,8 +45,8 @@ corner.on_rightclick = function(pos, node, player, itemstack, pointed_thing)
   if meta:get_string("owner") == "" and tonumber(player:get_attribute("plot_system_ownercount")) < plotsperplayer then
     cornerplayer[name] = pos
     minetest.show_formspec(name, "plot_system:corner_free",
-      "size[1.5,0.75]" ..
-      "button_exit[0,0;1.5,1;plot_system_corner_free;Own this Plot]")
+      "size[6,6]" ..
+      "button_exit[0,0;3,3;plot_system_corner_free;Own Plot]")
   elseif meta:get_string("owner") == "" then
     minetest.chat_send_player(name, "[Server]: You already have ".. plotsperplayer .." Plots and you arent allowed to own more")
   elseif meta:get_string("owner") == name then
