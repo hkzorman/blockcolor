@@ -13,26 +13,27 @@ player:get_inventory():add_item('main', 'color:blue')
 
 end)
 
--- Mobs
+-- Time 
 
 minetest.register_on_player_receive_fields(function(player, formname, fields)	
 		local name = player:get_player_name()	
-				if fields.mobs then --main page		
+				if fields.time then --main page		
 					
 				 player:get_inventory():set_list("main", {})
 
-player:get_inventory():add_item('main', 'ccmobs:white_block')
-player:get_inventory():add_item('main', 'ccmobs:black_block')
-player:get_inventory():add_item('main', 'ccmobs:red_block')
-player:get_inventory():add_item('main', 'ccmobs:orange_block')
-player:get_inventory():add_item('main', 'ccmobs:yellow_block')
-player:get_inventory():add_item('main', 'ccmobs:pink_block')
-player:get_inventory():add_item('main', 'ccmobs:green_block')
-player:get_inventory():add_item('main', 'ccmobs:blue_block')
+player:get_inventory():add_item('main', 'ontime_clocks:white_digital')
+player:get_inventory():add_item('main', 'ontime_clocks:black_digital')
+player:get_inventory():add_item('main', 'ontime_clocks:red_digital')
+player:get_inventory():add_item('main', 'ontime_clocks:orange_digital')
+player:get_inventory():add_item('main', 'ontime_clocks:yellow_digital')
+player:get_inventory():add_item('main', 'ontime_clocks:pink_digital')
+player:get_inventory():add_item('main', 'ontime_clocks:green_digital')
+player:get_inventory():add_item('main', 'ontime_clocks:blue_digital')
 
-end 	
+end 
 end
 )
+
 
 -- Fence
 
