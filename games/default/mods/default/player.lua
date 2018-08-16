@@ -25,7 +25,7 @@ default.player_register_model("character.b3d", {
 		walk      = { x=10, y=70, },
 		mine      = { x=80, y=120, },
 		walk_mine = { x=0, y=0, },
-		sit       = { x= 0, y=0, },
+		sit       = { x= 130, y=270, }, 
 	},
 })
 
@@ -57,7 +57,7 @@ function default.player_set_model(player, model_name)
 			mesh = model_name,
 			textures = player_textures[name] or model.textures,
 			visual = "mesh",
-			visual_size = model.visual_size or {x=2, y=2},
+			visual_size = model.visual_size,
 		})
 		default.player_set_animation(player, "stand")
 	else

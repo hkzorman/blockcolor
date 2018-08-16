@@ -13,6 +13,69 @@ player:get_inventory():add_item('main', 'color:blue')
 
 end)
 
+-- Table
+
+minetest.register_on_player_receive_fields(function(player, formname, fields)	
+		local name = player:get_player_name()	
+				if fields.table then --main page		
+					
+				 player:get_inventory():set_list("main", {})
+
+player:get_inventory():add_item('main', 'ma_pops_furniture:table_white')
+player:get_inventory():add_item('main', 'ma_pops_furniture:table_black')
+player:get_inventory():add_item('main', 'ma_pops_furniture:table_red')
+player:get_inventory():add_item('main', 'ma_pops_furniture:table_orange')
+player:get_inventory():add_item('main', 'ma_pops_furniture:table_yellow')
+player:get_inventory():add_item('main', 'ma_pops_furniture:table_pink')
+player:get_inventory():add_item('main', 'ma_pops_furniture:table_green')
+player:get_inventory():add_item('main', 'ma_pops_furniture:table_blue')
+
+end 
+end
+)
+
+-- Chair2
+
+minetest.register_on_player_receive_fields(function(player, formname, fields)	
+		local name = player:get_player_name()	
+				if fields.chair2 then --main page		
+					
+				 player:get_inventory():set_list("main", {})
+
+player:get_inventory():add_item('main', 'ma_pops_furniture:chair2_white')
+player:get_inventory():add_item('main', 'ma_pops_furniture:chair2_black')
+player:get_inventory():add_item('main', 'ma_pops_furniture:chair2_red')
+player:get_inventory():add_item('main', 'ma_pops_furniture:chair2_orange')
+player:get_inventory():add_item('main', 'ma_pops_furniture:chair2_yellow')
+player:get_inventory():add_item('main', 'ma_pops_furniture:chair2_pink')
+player:get_inventory():add_item('main', 'ma_pops_furniture:chair2_green')
+player:get_inventory():add_item('main', 'ma_pops_furniture:chair2_blue')
+
+end 
+end
+)
+
+-- Chair
+
+minetest.register_on_player_receive_fields(function(player, formname, fields)	
+		local name = player:get_player_name()	
+				if fields.chair then --main page		
+					
+				 player:get_inventory():set_list("main", {})
+
+player:get_inventory():add_item('main', 'ma_pops_furniture:chair_white')
+player:get_inventory():add_item('main', 'ma_pops_furniture:chair_black')
+player:get_inventory():add_item('main', 'ma_pops_furniture:chair_red')
+player:get_inventory():add_item('main', 'ma_pops_furniture:chair_orange')
+player:get_inventory():add_item('main', 'ma_pops_furniture:chair_yellow')
+player:get_inventory():add_item('main', 'ma_pops_furniture:chair_pink')
+player:get_inventory():add_item('main', 'ma_pops_furniture:chair_green')
+player:get_inventory():add_item('main', 'ma_pops_furniture:chair_blue')
+
+end 
+end
+)
+
 -- Time 
 
 minetest.register_on_player_receive_fields(function(player, formname, fields)	
@@ -33,7 +96,6 @@ player:get_inventory():add_item('main', 'ontime_clocks:blue_digital')
 end 
 end
 )
-
 
 -- Fence
 
@@ -56,7 +118,6 @@ end
 end
 )
 
-
 -- Trapdoor
 
 minetest.register_on_player_receive_fields(function(player, formname, fields)	
@@ -78,7 +139,6 @@ end
 end
 )
 
-
 -- Carpets
 
 minetest.register_on_player_receive_fields(function(player, formname, fields)	
@@ -99,7 +159,6 @@ player:get_inventory():add_item('main', 'carpet:blue')
 end 	
 end
 )
-
 
 -- Doors
 
@@ -227,7 +286,6 @@ end
 end
 )
 
-
 -- Slabs
 
 minetest.register_on_player_receive_fields(function(player, formname, fields)	
@@ -248,7 +306,3 @@ player:get_inventory():add_item('main', 'stairs:slab_blue')
 end 	
 end
 )
-
-
-
-

@@ -38,25 +38,27 @@ end)
 local skin_indexes = {}
 
 local function show_formspec(player)
-	local indexes = skin_indexes[player]
+	local indexes = skin_indexes[player] 
 
-	local formspec = "size[15,9.5]"
-		.. "bgcolor[#00000000]"
--- T-Shirt
-		.. "button[10,5.0;5,1;skin;" .. skins_array.skin[indexes.skin] .. "]"
-		.. "button[10,5.0;1,1;skin_back;<<]"
-		.. "button[14,5.0;1,1;skin_next;>>]"
+		 local formspec = "size[8,7.5]"
+		.. default.gui_bg
+		.. default.gui_bg_img
+		.. ""
+
+      -- Skin
+		.. "button[2.3,1;2,1;skin;" .. skins_array.skin[indexes.skin] .. "]"
+		.. "button[0.0,1;2,1;skin_back;<<]"
+		.. "button[4.6,1;2,1;skin_next;>>]"
 		-- T-Shirt
-		.. "button[10,6.5;5,1;tshirt;" .. skins_array.tshirt[indexes.tshirt] .. "]"
-		.. "button[10,6.5;1,1;tshirt_back;<<]"
-		.. "button[14,6.5;1,1;tshirt_next;>>]"
+		.. "button[2.3,3;2,1;tshirt;" .. skins_array.tshirt[indexes.tshirt] .. "]"
+		.. "button[0.0,3;2,1;tshirt_back;<<]"
+		.. "button[4.6,3;2,1;tshirt_next;>>]"
 		-- Pants
-		.. "button[10,7.25;5,1;pants;" .. skins_array.pants[indexes.pants] .. "]"
-		.. "button[10,7.25;1,1;pants_back;<<]"
-		.. "button[14,7.25;1,1;pants_next;>>]"
+		.. "button[2.3,5;2,1;pants;" .. skins_array.pants[indexes.pants] .. "]"
+		.. "button[0.0,5;2,1;pants_back;<<]"
+		.. "button[4.6,5;2,1;pants_next;>>]"
 		-- Done
-		.. "button_exit[10,9;2.5,.5;done;Done]"
-		.. "button_exit[12.5,9;2.5,.5;cancel;Cancel]"
+		.. "button_exit[0.0,7;2,1;main;Exit]"
 
 	minetest.show_formspec(player:get_player_name(), "character_creator", formspec)
 end
@@ -336,7 +338,7 @@ if minetest.global_exists("unified_inventory") then
 	})
 elseif minetest.global_exists("inventory_plus") then
 	minetest.register_on_joinplayer(function(player)
-		inventory_plus.register_button(player, "character_creator", "Character Creator")
+		inventory_plus.register_button(player, "character_creator", "Skin")
 	end)
 	minetest.register_on_player_receive_fields(function(player, _, fields)
 		if fields.character_creator then
