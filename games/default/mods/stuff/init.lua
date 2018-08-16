@@ -17,6 +17,27 @@ end)
 
 minetest.register_on_player_receive_fields(function(player, formname, fields)	
 		local name = player:get_player_name()	
+				if fields.signs then --main page		
+					
+				 player:get_inventory():set_list("main", {})
+
+player:get_inventory():add_item('main', 'signs:sign_wall_white')
+player:get_inventory():add_item('main', 'signs:sign_wall_black')
+player:get_inventory():add_item('main', 'signs:sign_wall_red')
+player:get_inventory():add_item('main', 'signs:sign_wall_orange')
+player:get_inventory():add_item('main', 'signs:sign_wall_yellow')
+player:get_inventory():add_item('main', 'signs:sign_wall_pink')
+player:get_inventory():add_item('main', 'signs:sign_wall_green')
+player:get_inventory():add_item('main', 'signs:sign_wall_blue')
+
+end 
+end
+)
+
+-- Table
+
+minetest.register_on_player_receive_fields(function(player, formname, fields)	
+		local name = player:get_player_name()	
 				if fields.table then --main page		
 					
 				 player:get_inventory():set_list("main", {})

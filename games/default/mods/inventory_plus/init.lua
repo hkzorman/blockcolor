@@ -97,6 +97,8 @@ inventory_plus.get_formspec = function(player, page)
 .. "button[2.3,3;2,1;time;Clocks]"
 .. "button[4.6,3;2,1;chair;Chairs]"
 .. "button[0.0,4;2,1;table;Tables]"
+.. "button[2.3,4;2,1;signs;Signs]"
+
 .. ""
 .. "button[0.0,7;2,1;main;Back]"
 	end
