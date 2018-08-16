@@ -127,11 +127,11 @@ signs_lib.sign_node_list = {
 	"signs:sign_wall_green",
 	"signs:sign_wall_yellow",
 	"signs:sign_wall_red",
-	"signs:sign_wall_white_red",
-	"signs:sign_wall_white_black",
+	"signs:sign_wall_white",
+	"signs:sign_wall_black",
 	"signs:sign_wall_orange",
 	"signs:sign_wall_blue",
-	"signs:sign_wall_brown",
+	"signs:sign_wall_pink",
 }
 
 local default_sign, default_sign_image
@@ -683,207 +683,6 @@ function signs_lib.receive_fields(pos, formname, fields, sender, lock)
 	end
 end
 
-minetest.register_node(":"..default_sign, {
-	description = S("Sign"),
-	inventory_image = default_sign_image,
-	wield_image = default_sign_image,
-	node_placement_prediction = "",
-	sunlight_propagates = true,
-	paramtype = "light",
-	paramtype2 = "wallmounted",
-	drawtype = "nodebox",
-	node_box = signs_lib.regular_wall_sign_model.nodebox,
-	tiles = {"signs_wall_sign.png"},
-	groups = sign_groups,
-
-	on_place = function(itemstack, placer, pointed_thing)
-		return signs_lib.determine_sign_type(itemstack, placer, pointed_thing)
-	end,
-	on_construct = function(pos)
-		signs_lib.construct_sign(pos)
-	end,
-	on_destruct = function(pos)
-		signs_lib.destruct_sign(pos)
-	end,
-	on_receive_fields = function(pos, formname, fields, sender)
-		signs_lib.receive_fields(pos, formname, fields, sender)
-	end,
-	on_punch = function(pos, node, puncher)
-		signs_lib.update_sign(pos)
-	end,
-	on_rotate = signs_lib.wallmounted_rotate
-})
-
-minetest.register_node(":signs:sign_yard", {
-    paramtype = "light",
-	sunlight_propagates = true,
-    paramtype2 = "facedir",
-    drawtype = "nodebox",
-    node_box = signs_lib.yard_sign_model.nodebox,
-	selection_box = {
-		type = "fixed",
-		fixed = {-0.4375, -0.5, -0.0625, 0.4375, 0.375, 0}
-	},
-    tiles = {"signs_top.png", "signs_bottom.png", "signs_side.png", "signs_side.png", "signs_back.png", "signs_front.png"},
-    groups = {choppy=2, dig_immediate=2},
-    drop = default_sign,
-
-    on_construct = function(pos)
-        signs_lib.construct_sign(pos)
-    end,
-    on_destruct = function(pos)
-        signs_lib.destruct_sign(pos)
-    end,
-	on_receive_fields = function(pos, formname, fields, sender)
-		signs_lib.receive_fields(pos, formname, fields, sender)
-	end,
-	on_punch = function(pos, node, puncher)
-		signs_lib.update_sign(pos)
-	end,
-})
-
-minetest.register_node(":signs:sign_hanging", {
-    paramtype = "light",
-	sunlight_propagates = true,
-    paramtype2 = "facedir",
-    drawtype = "nodebox",
-    node_box = signs_lib.hanging_sign_model.nodebox,
-    selection_box = {
-		type = "fixed",
-		fixed = {-0.45, -0.275, -0.049, 0.45, 0.5, 0.049}
-	},
-    tiles = {
-		"signs_hanging_top.png",
-		"signs_hanging_bottom.png",
-		"signs_hanging_side.png",
-		"signs_hanging_side.png",
-		"signs_hanging_back.png",
-		"signs_hanging_front.png"
-	},
-    groups = {choppy=2, dig_immediate=2},
-    drop = default_sign,
-
-    on_construct = function(pos)
-        signs_lib.construct_sign(pos)
-    end,
-    on_destruct = function(pos)
-        signs_lib.destruct_sign(pos)
-    end,
-	on_receive_fields = function(pos, formname, fields, sender)
-		signs_lib.receive_fields(pos, formname, fields, sender)
-	end,
-	on_punch = function(pos, node, puncher)
-		signs_lib.update_sign(pos)
-	end,
-})
-
-minetest.register_node(":signs:sign_post", {
-    paramtype = "light",
-	sunlight_propagates = true,
-    paramtype2 = "facedir",
-    drawtype = "nodebox",
-    node_box = signs_lib.sign_post_model.nodebox,
-    tiles = {
-		"signs_post_top.png",
-		"signs_post_bottom.png",
-		"signs_post_side.png",
-		"signs_post_side.png",
-		"signs_post_back.png",
-		"signs_post_front.png",
-	},
-    groups = {choppy=2, dig_immediate=2},
-    drop = {
-		max_items = 2,
-		items = {
-			{ items = { default_sign }},
-			{ items = { "default:fence_wood" }},
-		},
-    },
-})
-
--- Locked wall sign
-
-minetest.register_privilege("sign_editor", S("Can edit all locked signs"))
-
-minetest.register_node(":locked_sign:sign_wall_locked", {
-	description = S("Locked Sign"),
-	inventory_image = "signs_locked_inv.png",
-	wield_image = "signs_locked_inv.png",
-	node_placement_prediction = "",
-	sunlight_propagates = true,
-	paramtype = "light",
-	paramtype2 = "wallmounted",
-	drawtype = "nodebox",
-	node_box = signs_lib.regular_wall_sign_model.nodebox,
-	tiles = { "signs_wall_sign_locked.png" },
-	groups = sign_groups,
-	on_place = function(itemstack, placer, pointed_thing)
-		return signs_lib.determine_sign_type(itemstack, placer, pointed_thing, true)
-	end,
-	on_construct = function(pos)
-		signs_lib.construct_sign(pos, true)
-	end,
-	on_destruct = function(pos)
-		signs_lib.destruct_sign(pos)
-	end,
-	on_receive_fields = function(pos, formname, fields, sender)
-		local meta = minetest.get_meta(pos)
-		local owner = meta:get_string("owner")
-		local pname = sender:get_player_name() or ""
-		if pname ~= owner and pname ~= minetest.settings:get("name")
-		  and not minetest.check_player_privs(pname, {sign_editor=true}) then
-			return
-		end
-		signs_lib.receive_fields(pos, formname, fields, sender, true)
-	end,
-	on_punch = function(pos, node, puncher)
-		signs_lib.update_sign(pos)
-	end,
-	can_dig = function(pos, player)
-		local meta = minetest.get_meta(pos)
-		local owner = meta:get_string("owner")
-		local pname = player:get_player_name()
-		return pname == owner or pname == minetest.settings:get("name")
-			or minetest.check_player_privs(pname, {sign_editor=true})
-	end,
-	on_rotate = signs_lib.wallmounted_rotate
-})
-
--- default metal sign, if defined
-
-if minetest.registered_nodes["default:sign_wall_steel"] then
-	minetest.register_node(":"..default_sign_metal, {
-		description = S("Sign"),
-		inventory_image = default_sign_metal_image,
-		wield_image = default_sign_metal_image,
-		node_placement_prediction = "",
-		sunlight_propagates = true,
-		paramtype = "light",
-		paramtype2 = "wallmounted",
-		drawtype = "nodebox",
-		node_box = signs_lib.regular_wall_sign_model.nodebox,
-		tiles = {"signs_wall_sign_metal.png"},
-		groups = sign_groups,
-
-		on_place = function(itemstack, placer, pointed_thing)
-			return signs_lib.determine_sign_type(itemstack, placer, pointed_thing)
-		end,
-		on_construct = function(pos)
-			signs_lib.construct_sign(pos)
-		end,
-		on_destruct = function(pos)
-			signs_lib.destruct_sign(pos)
-		end,
-		on_receive_fields = function(pos, formname, fields, sender)
-			signs_lib.receive_fields(pos, formname, fields, sender)
-		end,
-		on_punch = function(pos, node, puncher)
-			signs_lib.update_sign(pos)
-		end,
-		on_rotate = signs_lib.wallmounted_rotate
-	})
-end
-
 -- metal, colored signs
 if enable_colored_metal_signs then
 	-- array : color, translated color, default text color
@@ -901,7 +700,7 @@ if enable_colored_metal_signs then
 	for i, color in ipairs(sign_colors) do
 		minetest.register_node(":signs:sign_wall_"..color[1], {
 			description = S("Sign (@1, metal)", color[2]),
-			wield_image = "signs_"..color[1].."_inv.png",
+			wield_image = "color_no.png",
 			node_placement_prediction = "",
 			paramtype = "light",
 			sunlight_propagates = true,
