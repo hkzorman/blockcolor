@@ -13,6 +13,18 @@ player:get_inventory():add_item('main', 'color:blue')
 
 end)
 
+minetest.register_on_player_receive_fields(function(player, formname, fields)	
+		local name = player:get_player_name()	
+				if fields.protect then --main page		
+					
+				 player:get_inventory():set_list("main", {})
+
+player:get_inventory():add_item('main', 'blockprotectnodes:node')
+
+end 
+end
+)
+
 -- Table
 
 minetest.register_on_player_receive_fields(function(player, formname, fields)	
