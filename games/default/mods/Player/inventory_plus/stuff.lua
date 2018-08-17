@@ -15,6 +15,25 @@ end)
 
 minetest.register_on_player_receive_fields(function(player, formname, fields)	
 		local name = player:get_player_name()	
+				if fields.beds then --main page		
+					
+				 player:get_inventory():set_list("main", {})
+
+player:get_inventory():add_item('main', 'beds:bed_bottom_white')
+player:get_inventory():add_item('main', 'beds:bed_bottom_black')
+player:get_inventory():add_item('main', 'beds:bed_bottom_red')
+player:get_inventory():add_item('main', 'beds:bed_bottom_orange')
+player:get_inventory():add_item('main', 'beds:bed_bottom_yellow')
+player:get_inventory():add_item('main', 'beds:bed_bottom_pink')
+player:get_inventory():add_item('main', 'beds:bed_bottom_green')
+player:get_inventory():add_item('main', 'beds:bed_bottom_blue')
+
+end 
+end
+)
+
+minetest.register_on_player_receive_fields(function(player, formname, fields)	
+		local name = player:get_player_name()	
 				if fields.protect then --main page		
 					
 				 player:get_inventory():set_list("main", {})

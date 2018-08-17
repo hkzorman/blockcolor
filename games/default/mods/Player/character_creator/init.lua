@@ -10,9 +10,11 @@ local skin_default = {
 	gender     = "Male",
 	height     = 2,
 	width      = 2,
+   face     = "Happy Face",
 	skin       = "Panda Skin",
 	tshirt     = "None T-Shirt",
-	pants      = "None Shoes",
+   shoes      = "None Shoes",
+   pants     = "None Pants",
 }
 
 local skins = character_creator.skins
@@ -30,7 +32,10 @@ minetest.after(0, function()
 	skins_array = {
 		skin       = associative_to_array(skins.skin),
 		tshirt     = associative_to_array(skins.tshirt),
-		pants      = associative_to_array(skins.pants),
+		shoes      = associative_to_array(skins.shoes),
+pants     = associative_to_array(skins.pants),
+face = associative_to_array(skins.face),
+
 	}
 end)
 
@@ -49,14 +54,22 @@ local function show_formspec(player)
 		.. "button[2.3,1;2,1;skin;" .. skins_array.skin[indexes.skin] .. "]"
 		.. "button[0.0,1;2,1;skin_back;<<]"
 		.. "button[4.6,1;2,1;skin_next;>>]"
+		-- Face
+		.. "button[2.3,2;2,1;face;" .. skins_array.face[indexes.face] .. "]"
+	.. "button[0.0,2;2,1;face_back;<<]"
+	.. "button[4.6,2;2,1;face_next;>>]"
 		-- T-Shirt
 		.. "button[2.3,3;2,1;tshirt;" .. skins_array.tshirt[indexes.tshirt] .. "]"
-		.. "button[0.0,3;2,1;tshirt_back;<<]"
-		.. "button[4.6,3;2,1;tshirt_next;>>]"
-		-- Pants
-		.. "button[2.3,5;2,1;pants;" .. skins_array.pants[indexes.pants] .. "]"
-		.. "button[0.0,5;2,1;pants_back;<<]"
-		.. "button[4.6,5;2,1;pants_next;>>]"
+	.. "button[0.0,3;2,1;tshirt_back;<<]"
+	.. "button[4.6,3;2,1;tshirt_next;>>]"
+    	-- Pants
+		.. "button[2.3,4;2,1;pants;" .. skins_array.pants[indexes.pants] .. "]"
+		.. "button[0.0,4;2,1;pants_back;<<]"
+		.. "button[4.6,4;2,1;pants_next;>>]"
+		-- Shoes
+		.. "button[2.3,5;2,1;shoes;" .. skins_array.shoes[indexes.shoes] .. "]"
+		.. "button[0.0,5;2,1;shoes_back;<<]"
+		.. "button[4.6,5;2,1;shoes_next;>>]"
 		-- Done
 		.. "button_exit[0.0,7;2,1;main;Exit]"
 
@@ -91,7 +104,10 @@ local function load_skin(player)
 
 	load_data("skin")
 	load_data("tshirt")
-	load_data("pants")
+	load_data("shoes")
+load_data("pants")
+load_data("face")
+
 end
 
 local function save_skin(player)
@@ -104,7 +120,10 @@ local function save_skin(player)
 
 	save_data("skin")
 	save_data("tshirt")
-	save_data("pants")
+	save_data("shoes")
+   save_data("pants")
+save_data("face")
+
 end
 
 local function get_texture(player)
@@ -120,9 +139,17 @@ local function get_texture(player)
 	local tshirt = skins.tshirt[tshirt_key]
 	texture = texture .. "^" .. tshirt
 
-	local pants_key = skins_array.pants[indexes.pants]
+   local pants_key = skins_array.pants[indexes.pants]
 	local pants = skins.pants[pants_key]
 	texture = texture .. "^" .. pants
+
+	 local shoes_key = skins_array.shoes[indexes.shoes]
+	local shoes = skins.shoes[shoes_key]
+	texture = texture .. "^" .. shoes
+
+local face_key = skins_array.face[indexes.face]
+	local face = skins.face[face_key]
+	texture = texture .. "^" .. face
 
 	return texture
 end
