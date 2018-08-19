@@ -25,6 +25,121 @@ end
 
 minetest.register_on_player_receive_fields(function(player, formname, fields)	
 		local name = player:get_player_name()	
+				if fields.sphere then --main page		
+					
+				 player:get_inventory():set_list("main", {})
+
+player:get_inventory():add_item('main', 'slope:sphere_white')
+player:get_inventory():add_item('main', 'slope:sphere_black')
+player:get_inventory():add_item('main', 'slope:sphere_red')
+player:get_inventory():add_item('main', 'slope:sphere_orange')
+player:get_inventory():add_item('main', 'slope:sphere_yellow')
+player:get_inventory():add_item('main', 'slope:sphere_pink')
+player:get_inventory():add_item('main', 'slope:sphere_green')
+player:get_inventory():add_item('main', 'slope:sphere_blue')
+
+end 
+end
+)
+
+minetest.register_on_player_receive_fields(function(player, formname, fields)	
+		local name = player:get_player_name()	
+				if fields.cone then --main page		
+					
+				 player:get_inventory():set_list("main", {})
+
+player:get_inventory():add_item('main', 'slope:cone_white')
+player:get_inventory():add_item('main', 'slope:cone_black')
+player:get_inventory():add_item('main', 'slope:cone_red')
+player:get_inventory():add_item('main', 'slope:cone_orange')
+player:get_inventory():add_item('main', 'slope:cone_yellow')
+player:get_inventory():add_item('main', 'slope:cone_pink')
+player:get_inventory():add_item('main', 'slope:cone_green')
+player:get_inventory():add_item('main', 'slope:cone_blue')
+
+end 
+end
+)
+
+minetest.register_on_player_receive_fields(function(player, formname, fields)	
+		local name = player:get_player_name()	
+				if fields.outcorner then --main page		
+					
+				 player:get_inventory():set_list("main", {})
+
+player:get_inventory():add_item('main', 'slope:ocorner_white')
+player:get_inventory():add_item('main', 'slope:ocorner_black')
+player:get_inventory():add_item('main', 'slope:ocorner_red')
+player:get_inventory():add_item('main', 'slope:ocorner_orange')
+player:get_inventory():add_item('main', 'slope:ocorner_yellow')
+player:get_inventory():add_item('main', 'slope:ocorner_pink')
+player:get_inventory():add_item('main', 'slope:ocorner_green')
+player:get_inventory():add_item('main', 'slope:ocorner_blue')
+
+end 
+end
+)
+
+minetest.register_on_player_receive_fields(function(player, formname, fields)	
+		local name = player:get_player_name()	
+				if fields.incorner then --main page		
+					
+				 player:get_inventory():set_list("main", {})
+
+player:get_inventory():add_item('main', 'slope:icorner_white')
+player:get_inventory():add_item('main', 'slope:icorner_black')
+player:get_inventory():add_item('main', 'slope:icorner_red')
+player:get_inventory():add_item('main', 'slope:icorner_orange')
+player:get_inventory():add_item('main', 'slope:icorner_yellow')
+player:get_inventory():add_item('main', 'slope:icorner_pink')
+player:get_inventory():add_item('main', 'slope:icorner_green')
+player:get_inventory():add_item('main', 'slope:icorner_blue')
+
+end 
+end
+)
+
+minetest.register_on_player_receive_fields(function(player, formname, fields)	
+		local name = player:get_player_name()	
+				if fields.long then --main page		
+					
+				 player:get_inventory():set_list("main", {})
+
+player:get_inventory():add_item('main', 'slope:slopelong_white')
+player:get_inventory():add_item('main', 'slope:slopelong_black')
+player:get_inventory():add_item('main', 'slope:slopelong_red')
+player:get_inventory():add_item('main', 'slope:slopelong_orange')
+player:get_inventory():add_item('main', 'slope:slopelong_yellow')
+player:get_inventory():add_item('main', 'slope:slopelong_pink')
+player:get_inventory():add_item('main', 'slope:slopelong_green')
+player:get_inventory():add_item('main', 'slope:slopelong_blue')
+
+end 
+end
+)
+
+minetest.register_on_player_receive_fields(function(player, formname, fields)	
+		local name = player:get_player_name()	
+				if fields.cylinder then --main page		
+					
+				 player:get_inventory():set_list("main", {})
+
+player:get_inventory():add_item('main', 'slope:cylinder_white')
+player:get_inventory():add_item('main', 'slope:cylinder_black')
+player:get_inventory():add_item('main', 'slope:cylinder_red')
+player:get_inventory():add_item('main', 'slope:cylinder_orange')
+player:get_inventory():add_item('main', 'slope:cylinder_yellow')
+player:get_inventory():add_item('main', 'slope:cylinder_pink')
+player:get_inventory():add_item('main', 'slope:cylinder_green')
+player:get_inventory():add_item('main', 'slope:cylinder_blue')
+
+end 
+end
+)
+
+
+minetest.register_on_player_receive_fields(function(player, formname, fields)	
+		local name = player:get_player_name()	
 				if fields.beds then --main page		
 					
 				 player:get_inventory():set_list("main", {})
