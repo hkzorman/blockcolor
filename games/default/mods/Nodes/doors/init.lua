@@ -448,12 +448,31 @@ def.wield_scale = nil
 	_doors.registered_doors[name .. "_b"] = true
 end
 
-doors.register("door_white", {
-		tiles = {"doors_door_white.png"},
-		description = "White Door",
-wield_image = "color_handwhite.png",
+local source_list = {
+	{"black", "Darkened", "292421", 40, 36, 33}, 
+	{"blue", "Blue", "0000FF", 0, 0, 255},
+	{"green", "Green", "00FF00", 0, 255, 0}, 
+	{"white", "White", "F5F5F5", 245, 245, 245}, 
+	{"orange", "Orange", "FF6103", 255, 97, 3}, 
+	{"red", "Red", "FF0000", 255, 0, 0}, 
+	{"yellow", "Yellow", "FFFF00", 255, 255, 0}, 
+	{"pink", "pink", "FF69B4", 255, 105, 180}
+}
+
+for i in ipairs(source_list) do
+	local name = source_list[i][1]
+	local description = source_list[i][2]
+	local colour = source_list[i][3]
+	local red = source_list[i][4]
+	local green = source_list[i][5]
+	local blue = source_list[i][6]	
+
+doors.register("door_" .. name , {
+		tiles = {"doors_door_" .. name .. ".png"},
+		description = name .. "Door",
+wield_image = "none.png",
 wield_scale = {x=2,y=1.5,z=0.2},
-		 inventory_image = "doors_item_white.png",
+inventory_image = "doors.png^[colorize:#"..colour..":70",
 		groups = {cracky=3},
 		sounds = default.node_sound_glass_defaults(),
 		sound_open = "doors_glass_door_open",
@@ -461,90 +480,7 @@ wield_scale = {x=2,y=1.5,z=0.2},
 		
 })
 
-doors.register("door_red", {
-		tiles = {"doors_door_red.png"},
-		description = "Red Door",
-		inventory_image = "doors_item_red.png",
-wield_scale = {x=2,y=1.5,z=0.2},
-		groups = {cracky=3},
-		sounds = default.node_sound_glass_defaults(),
-		sound_open = "doors_glass_door_open",
-		sound_close = "doors_glass_door_close",
-		wield_image = "color_handred.png",
-		
-})
-
-doors.register("door_blue", {
-		tiles = {"doors_door_blue.png"},
-		description = "Blue Door",
-		inventory_image = "doors_item_blue.png",
-wield_scale = {x=2,y=1.5,z=0.2},
-		groups = {cracky=3},
-		sounds = default.node_sound_glass_defaults(),
-		sound_open = "doors_glass_door_open",
-		sound_close = "doors_glass_door_close",
-		wield_image = "color_handblue.png",
-		
-})
-
-doors.register("door_green", {
-		tiles = {"doors_door_green.png"},
-		description = "Green Door",
-		inventory_image = "doors_item_green.png",
-wield_scale = {x=2,y=1.5,z=0.2},
-		groups = {cracky=3},
-		sounds = default.node_sound_glass_defaults(),
-		sound_open = "doors_glass_door_open",
-		sound_close = "doors_glass_door_close",
-		wield_image = "color_handgreen.png",
-})
-
-doors.register("door_yellow", {
-		tiles = {"doors_door_yellow.png"},
-		description = "Yellow Door",
-		inventory_image = "doors_item_yellow.png",
-wield_scale = {x=2,y=1.5,z=0.2},
-		groups = {cracky=3},
-		sounds = default.node_sound_glass_defaults(),
-		sound_open = "doors_glass_door_open",
-		sound_close = "doors_glass_door_close",
-		wield_image = "color_handyellow.png",
-})
-
-doors.register("door_orange", {
-		tiles = {"doors_door_orange.png"},
-		description = "Orange Door",
-		inventory_image = "doors_item_orange.png",
-wield_scale = {x=2,y=1.5,z=0.2}, 	groups = {cracky=3},
-		sounds = default.node_sound_glass_defaults(),
-		sound_open = "doors_glass_door_open",
-		sound_close = "doors_glass_door_close",
-		wield_image = "color_handorange.png",
-})
-
-doors.register("door_pink", {
-		tiles = {"doors_door_pink.png"},
-		description = "Pink Door",
-		inventory_image = "doors_item_pink.png",
-wield_scale = {x=2,y=1.5,z=0.2},
-		groups = {cracky=3},
-		sounds = default.node_sound_glass_defaults(),
-		sound_open = "doors_glass_door_open",
-		sound_close = "doors_glass_door_close",
-		wield_image = "color_handpink.png",
-})
-
-doors.register("door_black", {
-		tiles = {"doors_door_black.png"},
-		description = "Black Door",
-		inventory_image = "doors_item_black.png",
-wield_scale = {x=2,y=1.5,z=0.2},
-		groups = {cracky=3},
-		sounds = default.node_sound_glass_defaults(),
-		sound_open = "doors_glass_door_open",
-		sound_close = "doors_glass_door_close",
-		wield_image = "color_handblack.png",
-})
+end
 
 -- Capture mods using the old API as best as possible.
 function doors.register_door(name, def)
@@ -711,78 +647,36 @@ function doors.register_trapdoor(name, def)
 	_doors.registered_trapdoors[name_closed] = true
 end
 
-doors.register_trapdoor("doors:trapdoor_white", {
+local source_list = {
+	{"black", "Darkened", "292421", 40, 36, 33}, 
+	{"blue", "Blue", "0000FF", 0, 0, 255},
+	{"green", "Green", "00FF00", 0, 255, 0}, 
+	{"white", "White", "F5F5F5", 245, 245, 245}, 
+	{"orange", "Orange", "FF6103", 255, 97, 3}, 
+	{"red", "Red", "FF0000", 255, 0, 0}, 
+	{"yellow", "Yellow", "FFFF00", 255, 255, 0}, 
+	{"pink", "pink", "FF69B4", 255, 105, 180}
+}
+
+for i in ipairs(source_list) do
+	local name = source_list[i][1]
+	local description = source_list[i][2]
+	local colour = source_list[i][3]
+	local red = source_list[i][4]
+	local green = source_list[i][5]
+	local blue = source_list[i][6]	
+
+doors.register_trapdoor("doors:trapdoor_" .. name , {
 	description = "Trapdoor",
-	tile_front = "color_white.png",
-	tile_side = "color_white.png",
-   wield_image = "color_handwhite.png",
+	tile_front = "color_" .. name .. ".png",
+	tile_side = "color_" .. name .. ".png",
+   wield_image = "color_hand" .. name ..".png",
    wield_scale = {x=2,y=1.5,z=0.2},
+   inventory_image = "trapdoor.png^[colorize:#"..colour..":70",
 	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2, door = 1},
 })
 
-doors.register_trapdoor("doors:trapdoor_blue", {
-	description = "Trapdoor",
-	tile_front = "color_blue.png",
-	tile_side = "color_blue.png",
-wield_image = "color_handblue.png",
-   wield_scale = {x=2,y=1.5,z=0.2},
-	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2, door = 1},
-})
-
-doors.register_trapdoor("doors:trapdoor_green", {
-	description = "Trapdoor",
-	tile_front = "color_green.png",
-	tile_side = "color_green.png",
-wield_image = "color_handgreen.png",
-   wield_scale = {x=2,y=1.5,z=0.2},
-	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2, door = 1},
-})
-
-doors.register_trapdoor("doors:trapdoor_red", {
-	description = "Trapdoor",
-	tile_front = "color_red.png",
-	tile_side = "color_red.png",
-wield_image = "color_handred.png",
-   wield_scale = {x=2,y=1.5,z=0.2},
-	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2, door = 1},
-})
-
-doors.register_trapdoor("doors:trapdoor_orange", {
-	description = "Trapdoor",
-	tile_front = "color_orange.png",
-	tile_side = "color_orange.png",
-wield_image = "color_handorange.png",
-   wield_scale = {x=2,y=1.5,z=0.2},
-	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2, door = 1},
-})
-
-
-doors.register_trapdoor("doors:trapdoor_yellow", {
-	description = "Trapdoor",
-	tile_front = "color_yellow.png",
-	tile_side = "color_yellow.png",
-wield_image = "color_handyellow.png",
-   wield_scale = {x=2,y=1.5,z=0.2},
-	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2, door = 1},
-})
-
-doors.register_trapdoor("doors:trapdoor_pink", {
-	description = "Trapdoor",
-	tile_front = "color_pink.png",
-	tile_side = "color_pink.png",
-wield_image = "color_handpink.png",
-   wield_scale = {x=2,y=1.5,z=0.2},
-	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2, door = 1},
-})
-
-doors.register_trapdoor("doors:trapdoor_black", {
-	description = "Trapdoor",
-	tile_front = "color_black.png",
-	tile_side = "color_black.png",
-wield_image = "color_handblack.png",
-   wield_scale = {x=2,y=1.5,z=0.2},
-	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2, door = 1},
-})
+end
 
 minetest.register_craft({
 	output = 'doors:trapdoor 2',

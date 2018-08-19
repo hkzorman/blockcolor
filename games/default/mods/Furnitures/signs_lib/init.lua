@@ -686,21 +686,24 @@ end
 -- metal, colored signs
 if enable_colored_metal_signs then
 	-- array : color, translated color, default text color
+
 	local sign_colors = {
-		{"green",        S("green"),       "f"},
-		{"yellow",       S("yellow"),      "0"},
-		{"red",          S("red"),         "f"},
-		{"white",    S("white"),   "4"},
-		{"black",  S("black"), "0"},
-		{"orange",       S("orange"),      "0"},
-		{"blue",         S("blue"),        "f"},
-		{"pink",        S("pink"),       "f"},
+		{"green",        S("green"),       "f", "00FF00"},
+		{"yellow",       S("yellow"),      "0", "FFFF00"},
+		{"red",          S("red"),         "f","FF0000"},
+		{"white",    S("white"),   "4","F5F5F5"},
+		{"black",  S("black"), "0","292421"},
+		{"orange",       S("orange"),      "0","FF6103"},
+		{"blue",         S("blue"),        "f","0000FF"},
+		{"pink",        S("pink"),       "f","FF69B4"},
 	}
 
 	for i, color in ipairs(sign_colors) do
 		minetest.register_node(":signs:sign_wall_"..color[1], {
 			description = S("Sign (@1, metal)", color[2]),
-			wield_image = "color_no.png",
+ inventory_image = "signs.png^[colorize:#"..color[4]..":70",
+			 wield_image = "color_no.png",
+		wield_scale = {x=2,y=1.5,z=0.2},
 			node_placement_prediction = "",
 			paramtype = "light",
 			sunlight_propagates = true,

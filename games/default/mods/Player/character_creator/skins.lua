@@ -9,6 +9,9 @@ face = {
       ["Happy Face"] = "cc_face_happy.png",
       ["Troll Face"] = "cc_face_troll.png",
       ["XD Face"] = "cc_face_xd.png",
+ ["Strange Face"] = "cc_face_strange.png",
+ ["Boom Face"] = "cc_face_boom.png",
+ ["None Face"] = "none.png",
 	},
 
 tshirt = {

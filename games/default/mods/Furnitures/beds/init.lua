@@ -20,6 +20,9 @@ local colour2 = beds_list[i][3]
 		description = beddesc,
 		drawtype = "nodebox",
 		tiles = {"color_white.png^[colorize:#"..colour2..":70", "color_orange.png",  "color_orange.png",  "color_orange.png",  "color_orange.png",  "color_orange.png"},
+wield_image = "color_no.png",
+inventory_image = "beds.png^[colorize:#".. colour2 .. ":70",
+		wield_scale = {x=2,y=1.5,z=0.2},
 		paramtype = "light",
 		paramtype2 = "facedir",
 		stack_max = 1,
@@ -139,6 +142,8 @@ local colour2 = beds_list[i][3]
 		tiles = {"beds_bed_top_top.png^[colorize:#"..colour2..":70", "color_orange.png",  "color_orange.png",  "color_orange.png",  "color_orange.png",  "color_orange.png"},
 		paramtype = "light",
 		paramtype2 = "facedir",
+wield_image = "color_no.png",
+		wield_scale = {x=2,y=1.5,z=0.2},
 		groups = {snappy=1,choppy=2,oddly_breakable_by_hand=2,flammable=3},
 		sounds = default.node_sound_wood_defaults(),
 		node_box = {

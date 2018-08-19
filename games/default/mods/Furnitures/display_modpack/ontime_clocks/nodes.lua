@@ -42,6 +42,7 @@ minetest.register_node("ontime_clocks:" .. name .. "_digital", {
 	description = ( name .. "Digital Clock"),
    wield_image = "color_no.png",
    wield_scale = {x=2,y=1.5,z=0.2},
+   inventory_image = "time.png^[colorize:#"..colour..":70",
 	paramtype = "light",
 	paramtype2 = "facedir",
 	drawtype = "nodebox",

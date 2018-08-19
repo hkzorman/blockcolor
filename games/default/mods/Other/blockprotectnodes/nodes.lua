@@ -1,5 +1,7 @@
 minetest.register_node("blockprotectnodes:node",{
 	description = "Block-Protection Node",
+wield_image = "color_no.png",
+		wield_scale = {x=2,y=1.5,z=0.2},
 	groups = {oddly_breakable_by_hand = 1},
 	sounds = default.node_sound_stone_defaults(),
 	tiles = {"blockprotectnodes-node.png"},

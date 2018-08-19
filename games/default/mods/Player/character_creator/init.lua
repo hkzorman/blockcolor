@@ -52,24 +52,25 @@ local function show_formspec(player)
 
       -- Skin
 		.. "button[2.3,1;2,1;skin;" .. skins_array.skin[indexes.skin] .. "]"
-		.. "button[0.0,1;2,1;skin_back;<<]"
-		.. "button[4.6,1;2,1;skin_next;>>]"
+      .. "image_button[0.0,1;2,1;gauche.png;skin_back;>>]"
+      .. "image_button[4.6,1;2,1;droite.png;skin_next;>>]"
+
 		-- Face
 		.. "button[2.3,2;2,1;face;" .. skins_array.face[indexes.face] .. "]"
-	.. "button[0.0,2;2,1;face_back;<<]"
-	.. "button[4.6,2;2,1;face_next;>>]"
+	    .. "image_button[0.0,2;2,1;gauche.png;face_back;>>]"
+      .. "image_button[4.6,2;2,1;droite.png;face_next;>>]"
 		-- T-Shirt
 		.. "button[2.3,3;2,1;tshirt;" .. skins_array.tshirt[indexes.tshirt] .. "]"
-	.. "button[0.0,3;2,1;tshirt_back;<<]"
-	.. "button[4.6,3;2,1;tshirt_next;>>]"
+	    .. "image_button[0.0,3;2,1;gauche.png;tshirt_back;>>]"
+      .. "image_button[4.6,3;2,1;droite.png;tshirt_next;>>]"
     	-- Pants
 		.. "button[2.3,4;2,1;pants;" .. skins_array.pants[indexes.pants] .. "]"
-		.. "button[0.0,4;2,1;pants_back;<<]"
-		.. "button[4.6,4;2,1;pants_next;>>]"
+	    .. "image_button[0.0,4;2,1;gauche.png;pants_back;>>]"
+      .. "image_button[4.6,4;2,1;droite.png;pants_next;>>]"
 		-- Shoes
 		.. "button[2.3,5;2,1;shoes;" .. skins_array.shoes[indexes.shoes] .. "]"
-		.. "button[0.0,5;2,1;shoes_back;<<]"
-		.. "button[4.6,5;2,1;shoes_next;>>]"
+    .. "image_button[0.0,5;2,1;gauche.png;shoes_back;>>]"
+      .. "image_button[4.6,5;2,1;droite.png;shoes_next;>>]"
 		-- Done
 		.. "button_exit[0.0,7;2,1;main;Exit]"
 

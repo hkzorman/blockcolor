@@ -15,6 +15,16 @@ end)
 
 minetest.register_on_player_receive_fields(function(player, formname, fields)	
 		local name = player:get_player_name()	
+				if fields.none then --main page		
+					
+				 player:get_inventory():set_list("main", {})
+
+end 
+end
+)
+
+minetest.register_on_player_receive_fields(function(player, formname, fields)	
+		local name = player:get_player_name()	
 				if fields.beds then --main page		
 					
 				 player:get_inventory():set_list("main", {})

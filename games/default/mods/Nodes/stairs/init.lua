@@ -45,12 +45,13 @@ end
 -- Register stairs.
 -- Node will be called stairs:stair_<subname>
 
-function stairs.register_stair(subname, recipeitem, groups, images, description, sounds)
+function stairs.register_stair(subname, recipeitem, groups, images, description, sounds, html)
 	groups.stair = 1
 	minetest.register_node(":stairs:stair_" .. subname, {
 		description = description,
 	   wield_image = "color_hand" .. subname .. ".png",
 		wield_scale = {x=2,y=1.5,z=0.2}, 		drawtype = "mesh",
+      inventory_image = "stairs.png^[colorize:#".. html ..":70",
 		mesh = "stairs_stair.obj",
 		tiles = images,
 		paramtype = "light",
@@ -132,12 +133,13 @@ local slab_trans_dir = {[0] = 8, 0, 2, 1, 3, 4}
 -- Register slabs.
 -- Node will be called stairs:slab_<subname>
 
-function stairs.register_slab(subname, recipeitem, groups, images, description, sounds)
+function stairs.register_slab(subname, recipeitem, groups, images, description, sounds, html)
 	groups.slab = 1
 	minetest.register_node(":stairs:slab_" .. subname, {
 		description = description,
 	   wield_image = "color_hand" .. subname .. ".png",
 		wield_scale = {x=2,y=1.5,z=0.2},
+      inventory_image = "slabs.png^[colorize:#".. html ..":70",
 		drawtype = "nodebox",
 		tiles = images,
 		paramtype = "light",
@@ -263,11 +265,10 @@ end
 -- Nodes will be called stairs:{stair,slab}_<subname>
 
 function stairs.register_stair_and_slab(subname, recipeitem,
-		groups, images, desc_stair, desc_slab, sounds)
-	stairs.register_stair(subname, recipeitem, groups, images, desc_stair, sounds)
-	stairs.register_slab(subname, recipeitem, groups, images, desc_slab, sounds)
+		groups, images, desc_stair, desc_slab, sounds, html)
+	stairs.register_stair(subname, recipeitem, groups, images, desc_stair, sounds, html)
+	stairs.register_slab(subname, recipeitem, groups, images, desc_slab, sounds, html)
 end
-
 
 -- Register default stairs and slabs
 
@@ -278,7 +279,8 @@ stairs.register_stair_and_slab(
 	{"color_blue.png"},
 	"Blue Stair",
 	"Blue Slab",
-	default.node_sound_wood_defaults()
+	default.node_sound_wood_defaults(),
+"0000FF"
 )
 
 stairs.register_stair_and_slab(
@@ -288,7 +290,8 @@ stairs.register_stair_and_slab(
 	{"color_red.png"},
 	"Red Stair",
 	"Red Slab",
-	default.node_sound_wood_defaults()
+	default.node_sound_wood_defaults(),
+"FF0000"
 )
 
 stairs.register_stair_and_slab(
@@ -298,7 +301,8 @@ stairs.register_stair_and_slab(
 	{"color_white.png"},
 	"White Stair",
 	"White Slab",
-	default.node_sound_wood_defaults()
+	default.node_sound_wood_defaults(),
+"F5F5F5"
 )
 
 stairs.register_stair_and_slab(
@@ -308,7 +312,8 @@ stairs.register_stair_and_slab(
 	{"color_black.png"},
 	"Black Stair",
 	"Black Slab",
-	default.node_sound_wood_defaults()
+	default.node_sound_wood_defaults(),
+"292421"
 )
 
 stairs.register_stair_and_slab(
@@ -318,7 +323,8 @@ stairs.register_stair_and_slab(
 	{"color_green.png"},
 	"Green Stair",
 	"Green Slab",
-	default.node_sound_wood_defaults()
+	default.node_sound_wood_defaults(),
+"00FF00"
 )
 
 stairs.register_stair_and_slab(
@@ -328,7 +334,8 @@ stairs.register_stair_and_slab(
 	{"color_yellow.png"},
 	"Yellow Stair",
 	"Yellow Slab",
-	default.node_sound_wood_defaults()
+	default.node_sound_wood_defaults(),
+"FFFF00"
 )
 
 stairs.register_stair_and_slab(
@@ -338,7 +345,8 @@ stairs.register_stair_and_slab(
 	{"color_orange.png"},
 	"Orange Stair",
 	"Orange Slab",
-	default.node_sound_wood_defaults()
+	default.node_sound_wood_defaults(),
+"FF6103"
 )
 
 stairs.register_stair_and_slab(
@@ -348,8 +356,6 @@ stairs.register_stair_and_slab(
 	{"color_pink.png"},
 	"Pink Stair",
 	"Pink Slab",
-	default.node_sound_wood_defaults()
+	default.node_sound_wood_defaults(),
+"FF69B4"
 )
-
-
-
