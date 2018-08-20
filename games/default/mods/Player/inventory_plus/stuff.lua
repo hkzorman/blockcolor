@@ -253,27 +253,6 @@ end
 end
 )
 
--- Time 
-
-minetest.register_on_player_receive_fields(function(player, formname, fields)	
-		local name = player:get_player_name()	
-				if fields.time then --main page		
-					
-				 player:get_inventory():set_list("main", {})
-
-player:get_inventory():add_item('main', 'ontime_clocks:white_digital')
-player:get_inventory():add_item('main', 'ontime_clocks:black_digital')
-player:get_inventory():add_item('main', 'ontime_clocks:red_digital')
-player:get_inventory():add_item('main', 'ontime_clocks:orange_digital')
-player:get_inventory():add_item('main', 'ontime_clocks:yellow_digital')
-player:get_inventory():add_item('main', 'ontime_clocks:pink_digital')
-player:get_inventory():add_item('main', 'ontime_clocks:green_digital')
-player:get_inventory():add_item('main', 'ontime_clocks:blue_digital')
-
-end 
-end
-)
-
 -- Fence
 
 minetest.register_on_player_receive_fields(function(player, formname, fields)	

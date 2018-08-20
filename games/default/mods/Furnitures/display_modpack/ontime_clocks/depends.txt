@@ -1,3 +1,0 @@
-default
-color
-display_api

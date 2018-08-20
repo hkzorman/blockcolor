@@ -1,9 +1,11 @@
 Blockcolor License Gpl 2.1 for code and Cc By SA 3.0 for medias.
 
-BlockColor : MrChiantos 
+BlockColor Game : MrChiantos 
 
-Panda Model : AspireMint
-Ships Mod : SokoMine
+Player Panda Model : AspireMint
+Ships Spawn Mod : SokoMine
+Furnitures Mod : Gerold55
+Slope and Extras (Merge) : Nigel 
 
 Minetest_Game Mods :  Minetest Team (Look readme or license in mod directory).
 
