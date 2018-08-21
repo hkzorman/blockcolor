@@ -105,6 +105,24 @@ for i in ipairs(source_list) do
 	local green = source_list[i][5]
 	local blue = source_list[i][6]	
 
+minetest.register_node("slope:slope_"..name, {
+        description = desc.. " slope",
+wield_image = "none.png",
+inventory_image = "triangle.png^[colorize:#"..colour..":70",
+        drawtype = "mesh",
+        mesh = "slope_test_slope.obj",
+        tiles = {"color_"..name..".png"},
+        paramtype = "light",
+        paramtype2 = "facedir",
+        groups = {snappy=2, choppy=2, oddly_breakable_by_hand=2},
+        sounds = default.node_sound_defaults(),
+        on_place = minetest.rotate_node,
+        collision_box = slope_cbox,
+        selection_box = slope_cbox,
+        oddly_breakable_by_hand = 1,
+        dig_immediate = 3,
+    })
+
     minetest.register_node("slope:ocorner_"..name, {
         description = desc.." slope (outer corner)",
 wield_image = "none.png",

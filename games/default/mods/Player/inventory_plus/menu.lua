@@ -73,8 +73,8 @@ inventory_plus.get_formspec = function(player, page)
 		.. default.gui_bg_img
 		.. ""
 
-	-- craft page
-	if page == "craft" then
+	-- nodes page
+	if page == "nodes" then
 
 		local inv = player:get_inventory() or nil
 
@@ -105,32 +105,80 @@ inventory_plus.get_formspec = function(player, page)
 .. "label[0.1,3; Flaps ]"
  .. "image_button_exit[1,2;1,1;fence.png;fence;]"
 .. "label[1.1,3;Fences]"
- .. "image_button_exit[2,2;1,1;chair.png;chair;]"
-.. "label[2.1,3;Chairs]"
- .. "image_button_exit[3,2;1,1;table.png;table;]"
-.. "label[3.1,3;Tables]"
- .. "image_button_exit[4,2;1,1;signs.png;signs;]"
-.. "label[4.1,3;Signs]"
- .. "image_button_exit[5,2;1,1;beds.png;beds;]"
-.. "label[5.1,3;Beds]"
- .. "image_button_exit[6,2;1,1;protect.png;protect;]"
-.. "label[6.1,3;Protect]"
- .. "image_button_exit[0,4;1,1;cylinder.png;cylinder;]"
-.. "label[0.0,5;Cylinder]"
- .. "image_button_exit[1,4;1,1;long.png;long;]"
-.. "label[1.0,5;Triangle]"
- .. "image_button_exit[2,4;1,1;cone.png;cone;]"
-.. "label[2.15,5;Cone]"
- .. "image_button_exit[3,4;1,1;sphere.png;sphere;]"
-.. "label[3.0,5;Sphere]"
- .. "image_button_exit[4,4;1,1;cornera.png;outcorner;]"
-.. "label[4.0,5;Corner a]"
- .. "image_button_exit[5.1,4;1,1;cornerb.png;incorner;]"
-.. "label[5.1,5;Corner b]"
+ .. "image_button_exit[2,2;1,1;cylinder.png;cylinder;]"
+.. "label[2.1,3;Cylinder]"
+ .. "image_button_exit[3,2;1,1;triangle.png;triangle;]"
+.. "label[3.1,3;Triangle]"
+ .. "image_button_exit[4,2;1,1;long.png;long;]"
+.. "label[4.1,3;T-Long]"
+ .. "image_button_exit[5,2;1,1;cone.png;cone;]"
+.. "label[5.1,3;Cone]"
+ .. "image_button_exit[6,2;1,1;sphere.png;sphere;]"
+.. "label[6.1,3;Sphere]"
+ .. "image_button_exit[7,2;1,1;cornera.png;outcorner;]"
+.. "label[7.1,3;Corner a]"
+ .. "image_button_exit[0.1,4;1,1;cornerb.png;incorner;]"
+.. "label[0.1,5;Corner b]"
+ .. "image_button_exit[6,5;1,1;protect.png;protect;]"
+.. "label[6.1,6;Protect]"
  .. "image_button_exit[7,5;1,1;nones.png;none;]"
 .. "label[7.1,6;None]"
 .. ""
 .. "button[0.0,7;2,1;main;Back]"
+	end
+	
+-- furnitures page
+
+if page == "furnitures" then
+
+		local inv = player:get_inventory() or nil
+
+		if not inv then
+			print ("NO INVENTORY FOUND")
+			return
+		end
+
+		 formspec = formspec
+
+ .. "image_button_exit[0,0;1,1;chair.png;chair;]"
+.. "label[0.1,1;Chairs]"
+ .. "image_button_exit[1,0;1,1;table.png;table;]"
+.. "label[1.1,1;Tables]"
+ .. "image_button_exit[2,0;1,1;signs.png;signs;]"
+.. "label[2.1,1;Signs]"
+ .. "image_button_exit[3,0;1,1;beds.png;beds;]"
+.. "label[3.1,1;Beds]"
+ .. "image_button_exit[6,5;1,1;protect.png;protect;]"
+.. "label[6.1,6;Protect]"
+ .. "image_button_exit[7,5;1,1;nones.png;none;]"
+.. "label[7.1,6;None]"
+.. ""
+.. "button[0.0,7;2,1;main;Back]"
+	end
+
+
+if page == "about" then
+
+		local inv = player:get_inventory() or nil
+
+		if not inv then
+			print ("NO INVENTORY FOUND")
+			return
+		end
+
+		 formspec = formspec
+
+.. "label[0.1,1; BlockColor Dev : Mrchiantos]"
+.. "label[0.1,1.5; Animal Player Model : AspireMint]"
+.. "label[0.1,2; Spawn Mod Boats : Sokomine]"
+.. "label[0.1,2.5; Furnitures Mods : Gerold55]"
+.. "label[0.1,3; Slope and Extras : Nigel]"
+.. "label[0.1,4; Others Mods : Minetest Team and Community.]"
+
+.. "label[0.1,0; BlockColor : License Gpl 2.1 for code and Cc By SA 3.0 for medias]"
+.. ""
+.. "button[0.0,7;2,1;main;Back]"
+
 	end
 	
 	-- main page
@@ -147,7 +195,7 @@ inventory_plus.get_formspec = function(player, page)
 .. "button_exit[2,5;4,2;quit;Quit]"
 
 			x = x 
-y = y + 2
+y = y + 1
 		end
 	end
 	
@@ -157,7 +205,9 @@ end
 -- register_on_joinplayer
 minetest.register_on_joinplayer(function(player)
 
-	inventory_plus.register_button(player,"craft", "Build")
+	inventory_plus.register_button(player,"nodes", "Build")
+inventory_plus.register_button(player,"furnitures", "Furnitures")
+inventory_plus.register_button(player,"about", "About")
 
 	minetest.after(1, function()
 
@@ -180,10 +230,26 @@ minetest.register_on_player_receive_fields(function(player, formname, fields)
 	end
 
 	-- craft
-	if fields.craft then
+	if fields.nodes then
 
 		inventory_plus.set_inventory_formspec(player,
-			inventory_plus.get_formspec(player, "craft"))
+			inventory_plus.get_formspec(player, "nodes"))
+
+		return
+	end
+
+	if fields.furnitures then
+
+		inventory_plus.set_inventory_formspec(player,
+			inventory_plus.get_formspec(player, "furnitures"))
+
+		return
+	end
+
+if fields.about then
+
+		inventory_plus.set_inventory_formspec(player,
+			inventory_plus.get_formspec(player, "about"))
 
 		return
 	end

@@ -101,6 +101,25 @@ end
 
 minetest.register_on_player_receive_fields(function(player, formname, fields)	
 		local name = player:get_player_name()	
+				if fields.triangle then --main page		
+					
+				 player:get_inventory():set_list("main", {})
+
+player:get_inventory():add_item('main', 'slope:slope_white')
+player:get_inventory():add_item('main', 'slope:slope_black')
+player:get_inventory():add_item('main', 'slope:slope_red')
+player:get_inventory():add_item('main', 'slope:slope_orange')
+player:get_inventory():add_item('main', 'slope:slope_yellow')
+player:get_inventory():add_item('main', 'slope:slope_pink')
+player:get_inventory():add_item('main', 'slope:slope_green')
+player:get_inventory():add_item('main', 'slope:slope_blue')
+
+end 
+end
+)
+
+minetest.register_on_player_receive_fields(function(player, formname, fields)	
+		local name = player:get_player_name()	
 				if fields.long then --main page		
 					
 				 player:get_inventory():set_list("main", {})
