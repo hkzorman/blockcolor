@@ -25,6 +25,24 @@ end
 
 minetest.register_on_player_receive_fields(function(player, formname, fields)	
 		local name = player:get_player_name()	
+				if fields.cars then --main page		
+					
+				 player:get_inventory():set_list("main", {})
+
+player:get_inventory():add_item('main', 'mesecar:mesecarwhite')
+player:get_inventory():add_item('main', 'mesecar:mesecarblack')
+player:get_inventory():add_item('main', 'mesecar:mesecarred')
+player:get_inventory():add_item('main', 'mesecar:mesecarorange')
+player:get_inventory():add_item('main', 'mesecar:mesecaryellow')
+player:get_inventory():add_item('main', 'mesecar:mesecarpink')
+player:get_inventory():add_item('main', 'mesecar:mesecargreen')
+player:get_inventory():add_item('main', 'mesecar:mesecarblue')
+
+end 
+end
+)
+minetest.register_on_player_receive_fields(function(player, formname, fields)	
+		local name = player:get_player_name()	
 				if fields.sphere then --main page		
 					
 				 player:get_inventory():set_list("main", {})
@@ -271,6 +289,28 @@ player:get_inventory():add_item('main', 'ma_pops_furniture:chair_blue')
 end 
 end
 )
+
+-- Flowers
+
+minetest.register_on_player_receive_fields(function(player, formname, fields)	
+		local name = player:get_player_name()	
+				if fields.flowers then --main page		
+					
+				 player:get_inventory():set_list("main", {})
+
+player:get_inventory():add_item('main', 'flowers:white')
+player:get_inventory():add_item('main', 'flowers:black')
+player:get_inventory():add_item('main', 'flowers:red')
+player:get_inventory():add_item('main', 'flowers:orange')
+player:get_inventory():add_item('main', 'flowers:yellow')
+player:get_inventory():add_item('main', 'flowers:pink')
+player:get_inventory():add_item('main', 'flowers:green')
+player:get_inventory():add_item('main', 'flowers:blue')
+
+end 	
+end
+)
+
 
 -- Fence
 
