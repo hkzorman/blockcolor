@@ -29,14 +29,14 @@ minetest.register_on_player_receive_fields(function(player, formname, fields)
 					
 				 player:get_inventory():set_list("main", {})
 
-player:get_inventory():add_item('main', 'mesecar:mesecarwhite')
-player:get_inventory():add_item('main', 'mesecar:mesecarblack')
-player:get_inventory():add_item('main', 'mesecar:mesecarred')
-player:get_inventory():add_item('main', 'mesecar:mesecarorange')
-player:get_inventory():add_item('main', 'mesecar:mesecaryellow')
-player:get_inventory():add_item('main', 'mesecar:mesecarpink')
-player:get_inventory():add_item('main', 'mesecar:mesecargreen')
-player:get_inventory():add_item('main', 'mesecar:mesecarblue')
+player:get_inventory():add_item('main', 'driftcar:driftcarwhite')
+player:get_inventory():add_item('main', 'driftcar:driftcarblack')
+player:get_inventory():add_item('main', 'driftcar:driftcarred')
+player:get_inventory():add_item('main', 'driftcar:driftcarorange')
+player:get_inventory():add_item('main', 'driftcar:driftcaryellow')
+player:get_inventory():add_item('main', 'driftcar:driftcarpink')
+player:get_inventory():add_item('main', 'driftcar:driftcargreen')
+player:get_inventory():add_item('main', 'driftcar:driftcarblue')
 
 end 
 end
