@@ -206,6 +206,19 @@ end
 end
 )
 
+minetest.register_on_player_receive_fields(function(player, formname, fields)	
+		local name = player:get_player_name()	
+				if fields.rotate then --main page		
+					
+				 player:get_inventory():set_list("main", {})
+
+player:get_inventory():add_item('main', 'screwdriver:screwdriver')
+
+end 
+end
+)
+
+
 -- Table
 
 minetest.register_on_player_receive_fields(function(player, formname, fields)	
