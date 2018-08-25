@@ -25,6 +25,25 @@ end
 
 minetest.register_on_player_receive_fields(function(player, formname, fields)	
 		local name = player:get_player_name()	
+				if fields.surfboard then --main page		
+					
+				 player:get_inventory():set_list("main", {})
+
+player:get_inventory():add_item('main', 'surfboard:boardwhite')
+player:get_inventory():add_item('main', 'surfboard:boardblack')
+player:get_inventory():add_item('main', 'surfboard:boardred')
+player:get_inventory():add_item('main', 'surfboard:boardorange')
+player:get_inventory():add_item('main', 'surfboard:boardyellow')
+player:get_inventory():add_item('main', 'surfboard:boardpink')
+player:get_inventory():add_item('main', 'surfboard:boardgreen')
+player:get_inventory():add_item('main', 'surfboard:boardblue')
+
+end 
+end
+)
+
+minetest.register_on_player_receive_fields(function(player, formname, fields)	
+		local name = player:get_player_name()	
 				if fields.cars then --main page		
 					
 				 player:get_inventory():set_list("main", {})
@@ -41,6 +60,7 @@ player:get_inventory():add_item('main', 'driftcar:driftcarblue')
 end 
 end
 )
+
 minetest.register_on_player_receive_fields(function(player, formname, fields)	
 		local name = player:get_player_name()	
 				if fields.sphere then --main page		
