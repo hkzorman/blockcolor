@@ -1,3 +1,0 @@
-# If enabled, a page will be added to the player inventory explaining how to protect one's
-# creations from vandals.
-blockprotectnodes.sfinv_page (Enable protection instructions in player menu) bool false

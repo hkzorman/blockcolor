@@ -228,6 +228,18 @@ end
 
 minetest.register_on_player_receive_fields(function(player, formname, fields)	
 		local name = player:get_player_name()	
+				if fields.planet then --main page		
+					
+				 player:get_inventory():set_list("main", {})
+
+player:get_inventory():add_item('main', 'multidimensions:teleporttool')
+
+end 
+end
+)
+
+minetest.register_on_player_receive_fields(function(player, formname, fields)	
+		local name = player:get_player_name()	
 				if fields.rotate then --main page		
 					
 				 player:get_inventory():set_list("main", {})
@@ -436,7 +448,15 @@ minetest.register_on_player_receive_fields(function(player, formname, fields)
 				if fields.waters then --main page		
 					
 				 player:get_inventory():set_list("main", {})
-					 
+
+minetest.register_privilege("water", {
+	description = "Protection Troll Waters",
+	give_to_singleplayer= false,
+})
+
+if minetest.check_player_privs(name, {water=true})==false then
+		minetest.chat_send_player(name,"You need the water privilege to use Water")
+else
 player:get_inventory():add_item('main', 'water:white_water_source')
 player:get_inventory():add_item('main', 'water:black_water_source')
 player:get_inventory():add_item('main', 'water:red_water_source')
@@ -445,6 +465,8 @@ player:get_inventory():add_item('main', 'water:yellow_water_source')
 player:get_inventory():add_item('main', 'water:pink_water_source')
 player:get_inventory():add_item('main', 'water:green_water_source')
 player:get_inventory():add_item('main', 'water:blue_water_source') 				
+
+	end					
 
 end 	
 end
