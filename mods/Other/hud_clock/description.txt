@@ -1,1 +1,0 @@
-Adds a clock to the HUD.
