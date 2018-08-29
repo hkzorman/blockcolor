@@ -121,8 +121,6 @@ inventory_plus.get_formspec = function(player, page)
 .. "label[0.1,5;Corner b]"
  .. "image_button_exit[5,5;1,1;rotate.png;rotate;]"
 .. "label[5.1,6;Rotate]"
-.. "image_button_exit[6,5;1,1;planet.png;planet;]"
-.. "label[6.1,6;Planets]"
  .. "image_button_exit[7,5;1,1;nones.png;none;]"
 .. "label[7.1,6;None]"
 .. ""
@@ -158,8 +156,6 @@ if page == "furnitures" then
 .. "label[6.1,1;Surfs]"
  .. "image_button_exit[5,5;1,1;rotate.png;rotate;]"
 .. "label[5.1,6;Rotate]"
- .. "image_button_exit[6,5;1,1;planet.png;planet;]"
-.. "label[6.1,6;Planets]"
  .. "image_button_exit[7,5;1,1;nones.png;none;]"
 .. "label[7.1,6;None]"
 .. ""
@@ -167,7 +163,7 @@ if page == "furnitures" then
 	end
 
 
-if page == "about" then
+if page == "planets" then
 
 		local inv = player:get_inventory() or nil
 
@@ -178,14 +174,10 @@ if page == "about" then
 
 		 formspec = formspec
 
-.. "label[0.1,1; BlockColor Dev : Mrchiantos]"
-.. "label[0.1,1.5; Animal Player Model : AspireMint]"
-.. "label[0.1,2; Spawn Mod Boats : Sokomine]"
-.. "label[0.1,2.5; Furnitures Mods : Gerold55]"
-.. "label[0.1,3; Slope and Extras : Nigel]"
-.. "label[0.1,4; Others Mods : Minetest Team and Community.]"
-
-.. "label[0.1,0; BlockColor : License Gpl 2.1 for code and Cc By SA 3.0 for medias]"
+ .. "image_button_exit[1,0;1,1;moon.png;moon;]"
+.. "label[1.1,1;Moon]"
+ .. "image_button_exit[0,0;1,1;earth.png;earth;]"
+.. "label[0.1,1;Earth]"
 .. ""
 .. "button[0.0,7;2,1;main;Back]"
 
@@ -217,7 +209,7 @@ minetest.register_on_joinplayer(function(player)
 
 	inventory_plus.register_button(player,"nodes", "Build")
 inventory_plus.register_button(player,"furnitures", "Furnitures")
-inventory_plus.register_button(player,"about", "About")
+inventory_plus.register_button(player,"planets", "Planets")
 
 	minetest.after(1, function()
 
@@ -256,10 +248,10 @@ minetest.register_on_player_receive_fields(function(player, formname, fields)
 		return
 	end
 
-if fields.about then
+if fields.planets then
 
 		inventory_plus.set_inventory_formspec(player,
-			inventory_plus.get_formspec(player, "about"))
+			inventory_plus.get_formspec(player, "planets"))
 
 		return
 	end
