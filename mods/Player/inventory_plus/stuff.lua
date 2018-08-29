@@ -42,7 +42,7 @@ minetest.register_on_player_receive_fields(function(player, formname, fields)
 if fields.moon then --main page		
 		
 moon_command = {}
-moon_command.pos = {x=0, y=5000, z=0}
+moon_command.pos = {x=0, y=5001, z=0}
 
         local player = minetest.get_player_by_name(name)
         if player == nil then
