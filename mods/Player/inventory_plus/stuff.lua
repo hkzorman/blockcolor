@@ -1,15 +1,17 @@
 -- Initial Stuff
 
-minetest.register_on_newplayer(function(player) 
+minetest.register_on_joinplayer(function(player) 
 
-player:get_inventory():add_item('main', 'color:white')
-player:get_inventory():add_item('main', 'color:black')
-player:get_inventory():add_item('main', 'color:red')
-player:get_inventory():add_item('main', 'color:orange')
-player:get_inventory():add_item('main', 'color:yellow')
-player:get_inventory():add_item('main', 'color:pink')
-player:get_inventory():add_item('main', 'color:green')
-player:get_inventory():add_item('main', 'color:blue')
+player:get_inventory():set_list("main", {})
+
+player:get_inventory():add_item('main', 'flowers:white')
+player:get_inventory():add_item('main', 'flowers:black')
+player:get_inventory():add_item('main', 'flowers:red')
+player:get_inventory():add_item('main', 'flowers:orange')
+player:get_inventory():add_item('main', 'flowers:yellow')
+player:get_inventory():add_item('main', 'flowers:pink')
+player:get_inventory():add_item('main', 'flowers:green')
+player:get_inventory():add_item('main', 'flowers:blue')
 
 end)
 
@@ -18,7 +20,7 @@ minetest.register_on_player_receive_fields(function(player, formname, fields)
 if fields.earth then --main page		
 		
 earth_command = {}
-earth_command.pos = {x=0, y=0, z=0}
+earth_command.pos = {x=0, y=27, z=0}
 
         local player = minetest.get_player_by_name(name)
         if player == nil then

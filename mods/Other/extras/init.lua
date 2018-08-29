@@ -2,7 +2,7 @@
 extras={}
     extras.playerhotbar     = tonumber(minetest.setting_get("playerhotbar")) or 8
     extras.path             = minetest.get_modpath("extras")
-    extras.spawnpoint       = {x=0, y= 0 , z=0}
+    extras.spawnpoint       = {x=0, y= 27 , z=0}
     extras.pingkick         = minetest.setting_getbool("pingkick") or nil
     extras.autorollback     = minetest.setting_getbool("autorollback") or nil
     extras.isplayer         = minetest.setting_getbool("isplayer") or nil
@@ -11,8 +11,8 @@ extras={}
     extras.empty            = minetest.setting_getbool("restart_if_empty") or nil
     extras.nospawn          = minetest.setting_getbool("restart_if_empty") or nil
 
-dofile(extras.path .. "/join_leave.lua")
-dofile(extras.path .. "/jail.lua")
+-- dofile(extras.path .. "/join_leave.lua")
+-- dofile(extras.path .. "/jail.lua")
 
 extras.setprivs_jailed = function ( name)
     minetest.chat_send_all("*************************")
