@@ -119,8 +119,8 @@ inventory_plus.get_formspec = function(player, page)
 .. "label[7.1,3;Corner a]"
  .. "image_button_exit[0.1,4;1,1;cornerb.png;incorner;]"
 .. "label[0.1,5;Corner b]"
- .. "image_button_exit[5,5;1,1;rotate.png;rotate;]"
-.. "label[5.1,6;Rotate]"
+ .. "image_button_exit[6,5;1,1;rotate.png;rotate;]"
+.. "label[6.1,6;Rotate]"
  .. "image_button_exit[7,5;1,1;nones.png;none;]"
 .. "label[7.1,6;None]"
 .. ""
@@ -142,20 +142,20 @@ if page == "furnitures" then
 
  .. "image_button_exit[0,0;1,1;chair.png;chair;]"
 .. "label[0.1,1;Chairs]"
- .. "image_button_exit[1,0;1,1;table.png;table;]"
-.. "label[1.1,1;Tables]"
- .. "image_button_exit[2,0;1,1;signs.png;signs;]"
-.. "label[2.1,1;Signs]"
- .. "image_button_exit[3,0;1,1;beds.png;beds;]"
-.. "label[3.1,1;Beds]"
- .. "image_button_exit[4,0;1,1;flowers.png;flowers;]"
-.. "label[4.1,1;Flowers]"
- .. "image_button_exit[5,0;1,1;cars.png;cars;]"
-.. "label[5.25,1;Cars]"
- .. "image_button_exit[6,0;1,1;surfboard.png;surfboard;]"
-.. "label[6.1,1;Surfs]"
- .. "image_button_exit[5,5;1,1;rotate.png;rotate;]"
-.. "label[5.1,6;Rotate]"
+ .. "image_button_exit[1,0;1,1;sofas.png;sofas;]"
+.. "label[1.1,1;Sofas]"
+ .. "image_button_exit[2,0;1,1;table.png;table;]"
+.. "label[2.1,1;Tables]"
+ .. "image_button_exit[3,0;1,1;signs.png;signs;]"
+.. "label[3.1,1;Signs]"
+ .. "image_button_exit[4,0;1,1;beds.png;beds;]"
+.. "label[4.1,1;Beds]"
+ .. "image_button_exit[5,0;1,1;flowers.png;flowers;]"
+.. "label[5.1,1;Flowers]"
+ .. "image_button_exit[6,0;1,1;cars.png;cars;]"
+.. "label[6.25,1;Cars]"
+ .. "image_button_exit[6,5;1,1;rotate.png;rotate;]"
+.. "label[6.1,6;Rotate]"
  .. "image_button_exit[7,5;1,1;nones.png;none;]"
 .. "label[7.1,6;None]"
 .. ""
@@ -208,7 +208,7 @@ end
 minetest.register_on_joinplayer(function(player)
 
 	inventory_plus.register_button(player,"nodes", "Build")
-inventory_plus.register_button(player,"furnitures", "Furnitures")
+inventory_plus.register_button(player,"furnitures", "Decorations")
 inventory_plus.register_button(player,"planets", "Planets")
 
 	minetest.after(1, function()

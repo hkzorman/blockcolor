@@ -88,44 +88,43 @@ inventory_image = "table.png^[colorize:#"..colour..":70",
 })
 end
 
--- Sofa
+-- Chair
 
-local chair2_table = { --name, color, colorize(hex or color name:intensity(1-255))
-{'Black', 'black', 'black:225'},
-{'Blue', 'blue', 'blue:225'},
-{'Green', 'green', '#32cd32:150'},
-{'Orange', 'orange', 'orange:225'},
-{'Pink', 'pink', 'pink:225'},
-{'Red', 'red', 'red:225'},
-{'White', 'white', 'white:1'},
-{'Yellow', 'yellow', 'yellow:225'},
+local chair2_table = { --name, material, invimg, colour
+
+{'Green Sofa', 'green', 'color_green.png', '00FF00'},
+{'Red Sofa', 'red', 'color_red.png', 'FF0000'},
+{'Blue Sofa', 'blue', 'color_blue.png', '0000FF'},
+{'Yellow Sofa', 'yellow', 'color_yellow.png', 'FFFF00'},
+{'Orange Sofa', 'orange', 'color_orange.png', 'FF6103'},
+{'Pink Sofa', 'pink', 'color_pink.png', 'FF69B4'},
+{'White Sofa', 'white', 'color_white.png', 'F5F5F5'},
+{'Black Sofa', 'black', 'color_black.png', '292421'},
+
 }
 
 for i in ipairs (chair2_table) do
-    local name = chair2_table[i][1]
-    local color = chair2_table[i][2]
-    local hex = chair2_table[i][3]
+	local name = chair2_table[i][1]
+	local material = chair2_table[i][2]
+	local invimg = chair2_table[i][3]
+   local colour = chair2_table[i][4]
 
-local cb = "^([combine:16x16:0,0=mp_cb.png^[mask:mp_mask.png)"
-local cf = "^([combine:16x16:0,0=mp_cf.png^[mask:mp_mask.png)"
-
-minetest.register_node("ma_pops_furniture:chair2_"..color, {
-    description = name.." Chair",
+minetest.register_node('ma_pops_furniture:chair2_'..material, {
+	description = name,
+	drawtype = 'nodebox',
 wield_image = "color_no.png",
 		wield_scale = {x=2,y=1.5,z=0.2},
-    tiles = {"color_"..color..".png","color_"..color..".png"..cb,"color_"..color..".png"..cf,"color_"..color..".png"..cf,"color_"..color..".png"..cf,"color_"..color..".png"..cf,},
-    drawtype = "nodebox",
-    paramtype = "light",
-    paramtype2 = "facedir",
-    groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2, furniture = 1, fall_damage_add_percent=-80, bouncy=80},
-	sounds = {wood = {name="furn_bouncy", gain=0.8}},
-    on_rightclick = function(pos, node, clicker)
-        ma_pops_furniture.sit(pos, node, clicker)
-        end,
-    node_box = {
-        type = "fixed",
-        fixed = {
-            {-0.4, -0.5, -0.4, -0.3, -0.4, -0.3},
+   inventory_image = "sofas.png^[colorize:#"..colour..":70",
+	tiles = {'color_'..material..'.png'},
+	groups = {choppy=2, oddly_breakably_by_hand=2, furniture=1, flammable=1},
+	paramtype = 'light',
+	paramtype2 = 'facedir',
+	sounds = default.node_sound_wood_defaults(),
+
+	node_box = {
+		type = "fixed",
+		fixed = {
+           {-0.4, -0.5, -0.4, -0.3, -0.4, -0.3},
             {-0.4, -0.5, 0.4, -0.3, -0.4, 0.3},
             {0.4, -0.5, 0.4, 0.3, -0.4, 0.3},
             {0.4, -0.5, -0.4, 0.3, -0.4, -0.3},

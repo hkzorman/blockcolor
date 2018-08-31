@@ -42,7 +42,7 @@ minetest.register_on_player_receive_fields(function(player, formname, fields)
 if fields.moon then --main page		
 		
 moon_command = {}
-moon_command.pos = {x=0, y=5001, z=0}
+moon_command.pos = {x=0, y=5000, z=0}
 
         local player = minetest.get_player_by_name(name)
         if player == nil then
@@ -63,25 +63,6 @@ minetest.register_on_player_receive_fields(function(player, formname, fields)
 				if fields.none then --main page		
 					
 				 player:get_inventory():set_list("main", {})
-
-end 
-end
-)
-
-minetest.register_on_player_receive_fields(function(player, formname, fields)	
-		local name = player:get_player_name()	
-				if fields.surfboard then --main page		
-					
-				 player:get_inventory():set_list("main", {})
-
-player:get_inventory():add_item('main', 'surfboard:boardwhite')
-player:get_inventory():add_item('main', 'surfboard:boardblack')
-player:get_inventory():add_item('main', 'surfboard:boardred')
-player:get_inventory():add_item('main', 'surfboard:boardorange')
-player:get_inventory():add_item('main', 'surfboard:boardyellow')
-player:get_inventory():add_item('main', 'surfboard:boardpink')
-player:get_inventory():add_item('main', 'surfboard:boardgreen')
-player:get_inventory():add_item('main', 'surfboard:boardblue')
 
 end 
 end
@@ -261,30 +242,6 @@ end
 
 minetest.register_on_player_receive_fields(function(player, formname, fields)	
 		local name = player:get_player_name()	
-				if fields.protect then --main page		
-					
-				 player:get_inventory():set_list("main", {})
-
-player:get_inventory():add_item('main', 'blockprotectnodes:node')
-
-end 
-end
-)
-
-minetest.register_on_player_receive_fields(function(player, formname, fields)	
-		local name = player:get_player_name()	
-				if fields.planet then --main page		
-					
-				 player:get_inventory():set_list("main", {})
-
-player:get_inventory():add_item('main', 'multidimensions:teleporttool')
-
-end 
-end
-)
-
-minetest.register_on_player_receive_fields(function(player, formname, fields)	
-		local name = player:get_player_name()	
 				if fields.rotate then --main page		
 					
 				 player:get_inventory():set_list("main", {})
@@ -342,7 +299,7 @@ end
 
 minetest.register_on_player_receive_fields(function(player, formname, fields)	
 		local name = player:get_player_name()	
-				if fields.chair2 then --main page		
+				if fields.sofas then --main page		
 					
 				 player:get_inventory():set_list("main", {})
 

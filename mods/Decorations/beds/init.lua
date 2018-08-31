@@ -87,54 +87,7 @@ inventory_image = "beds.png^[colorize:#".. colour2 .. ":70",
 			end
 		end,
 		
-		on_rightclick = function(pos, node, clicker)
-			if not clicker:is_player() then
-				return
-			end
-			local meta = minetest.env:get_meta(pos)
-			local param2 = node.param2
-			if param2 == 0 then
-				pos.z = pos.z+1
-			elseif param2 == 1 then
-				pos.x = pos.x+1
-			elseif param2 == 2 then
-				pos.z = pos.z-1
-			elseif param2 == 3 then
-				pos.x = pos.x-1
-			end
-			if clicker:get_player_name() == meta:get_string("player") then
-				if param2 == 0 then
-					pos.x = pos.x-2
-				elseif param2 == 1 then
-					pos.z = pos.z+1
-				elseif param2 == 2 then
-					pos.x = pos.x+1
-				elseif param2 == 3 then
-					pos.z = pos.z-2
-				end
-				pos.y = pos.y-0.5
-				clicker:set_physics_override(1, 1, 1)
-				clicker:setpos(pos)
-				meta:set_string("player", "")
-				player_in_bed = player_in_bed-1
-			elseif meta:get_string("player") == "" then
-				pos.y = pos.y-1
-				clicker:set_physics_override(0, 0, 0)
-				clicker:setpos(pos)
-				if param2 == 0 then
-					clicker:set_look_yaw(math.pi)
-				elseif param2 == 1 then
-					clicker:set_look_yaw(0.5*math.pi)
-				elseif param2 == 2 then
-					clicker:set_look_yaw(0)
-				elseif param2 == 3 then
-					clicker:set_look_yaw(1.5*math.pi)
-				end
-				
-				meta:set_string("player", clicker:get_player_name())
-				player_in_bed = player_in_bed+1
-			end
-		end
+		
 	})
 	
 	minetest.register_node("beds:bed_top_"..colour, {
