@@ -31,9 +31,7 @@ wield_image = "color_no.png",
 	paramtype = 'light',
 	paramtype2 = 'facedir',
 	sounds = default.node_sound_wood_defaults(),
-	on_rightclick = function(pos, node, clicker)
-		ma_pops_furniture.sit(pos, node, clicker)
-		end,
+
 	node_box = {
 		type = "fixed",
 		fixed = {
