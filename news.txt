@@ -1,9 +1,17 @@
-Port 30000   RAINBOW Survival      (Rule0)         [ Admin Nigel ]         
-Port 30001   TECH3 Survival            (Rule0)         [ Admin Anthony ]         
-Port 30002   S I M P L E                    (Rule0)         [ Admin Nigel ]         
-Port 30003   PLAY                              (No Rules)   [ Admin Nigel]         
-Port 30004   RAINBOW Creative     (Rule0)         [ Admin Elektra ]          
-Port 30005   BlockColor     (Rules Spawn)         [ Admin MrChiantos ]
+
+    XXXX. X.    xxx   xx. x. x  xx  xxx  x.  xxxx xxxx
+    x   X X.   x.  x x. x x x. x.  x.  x x.  x. x x. x
+    XXXXX X.   x.  x x.   xx.  x.  x.  x x.  x. x x.x 
+    x   X X.   x.  x x. x x x. x.  x.  x x.  x. x xxx
+    xxxx. Xxxx  xxx.  xx. x. x  xx. xxx  xxx xxxx x  x
+
+
+Port 30000   RAINBOW Survival      (Rule0)          [ Admin Nigel ]         
+Port 30001   TECH3 Survival        (Rule0)          [ Admin Anthony ]         
+Port 30002   S I M P L E           (Rule0)          [ Admin Nigel ]         
+Port 30003   PLAY                  (No Rules)       [ Admin Nigel]         
+Port 30004   RAINBOW Creative      (Rule0)          [ Admin Elektra ]          
+Port 30005   BlockColor            (Rules Spawn)    [ Admin MrChiantos ]
  
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                                               Welcome   To   B L O C K C O L O R                   ADMINS: MrChiantos / HOST: Nigel ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
