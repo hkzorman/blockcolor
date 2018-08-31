@@ -21,6 +21,7 @@ for i in ipairs(source_list) do
 
 minetest.register_node("driftcar:driftcar" ..name, {
 	description = "Drift Car Nodebox" ..name,
+wield_image = "none.png",
 	tiles = { -- Top, base, right, left, front, back
 		"driftcar_top.png^[colorize:#"..colour..":70",
 		"driftcar_base.png^[colorize:#"..colour..":70",
@@ -30,6 +31,7 @@ minetest.register_node("driftcar:driftcar" ..name, {
 		"driftcar_back.png^[colorize:#"..colour..":70",
 	},
 	paramtype = "light",
+paramtype2 = 'facedir',
 	drawtype = "nodebox",
 		node_box = {
 			type = "fixed",
