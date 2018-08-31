@@ -2,7 +2,7 @@
 mpd={}
 
 
-mpd.pause_between_songs=minetest.settings:get("mpd.pause_between_songs") or 30
+mpd.pause_between_songs=minetest.settings:get("mpd.pause_between_songs") or 10
 
 --end config
 
@@ -103,110 +103,4 @@ mpd.song_human_readable=function(id)
 	local song=mpd.songs[id]
 	if not song then return "<error>" end
 	return id..": "..song.title.." ["..song.lengthhr.."]"
-end
-
-minetest.register_privilege("mpd", "may control the music player daemon (mpd) mod")
-
-minetest.register_chatcommand("mpd_stop", {
-	params = "",
-	description = "Stop the song currently playing",
-	privs = {mpd=true},
-	func = function(name, param)
-		mpd.stop_song()
-	end,		
-})
-minetest.register_chatcommand("mpd_list", {
-	params = "",
-	description = "List all available songs and their IDs",
-	privs = {mpd=true},
-	func = function(name, param)
-		for k,v in ipairs(mpd.songs) do
-			minetest.chat_send_player(name, mpd.song_human_readable(k))
-		end
-	end,		
-})
-minetest.register_chatcommand("mpd_play", {
-	params = "<id>",
-	description = "Play the songs with the given ID (see ids with /mpd_list)",
-	privs = {mpd=true},
-	func = function(name, param)
-		if param=="" then
-			mpd.next_song()
-			return true,"Playing: "..mpd.song_human_readable(mpd.playing)
-		end
-		id=tonumber(param)
-		if id and id>0 and id<=#mpd.songs then
-			mpd.play_song(id)
-			return true,"Playing: "..mpd.song_human_readable(id)
-		end
-		return false, "Invalid song ID!"
-	end,		
-})
-minetest.register_chatcommand("mpd_what", {
-	params = "",
-	description = "Display the currently played song.",
-	privs = {mpd=true},
-	func = function(name, param)
-		if not mpd.playing then
-			if mpd.time_next and mpd.time_next~=0 then
-				return true,"Nothing playing, "..math.floor(mpd.time_next or 0).." sec. left until next song."
-			else
-				return true,"Nothing playing."
-			end
-		end
-		return true,"Playing: "..mpd.song_human_readable(mpd.playing).."\nTime Left: "..math.floor(mpd.song_time_left or 0).." sec."
-	end,		
-})
-minetest.register_chatcommand("mpd_next", {
-	params = "[seconds]",
-	description = "Start the next song, either immediately (no parameters) or after n seconds.",
-	privs = {mpd=true},
-	func = function(name, param)
-		mpd.stop_song()
-		if param and tonumber(param) then
-			mpd.time_next=tonumber(param)
-			return true,"Next song in "..param.." seconds!"
-		else
-			mpd.next_song()
-			return true,"Next song started!"
-		end
-	end,		
-})
-minetest.register_chatcommand("mvolume", {
-	params = "[volume level (0-1)]",
-	description = "Set your background music volume. Use /mvolume 0 to turn off background music for you. Without parameters, show your current setting.",
-	privs = {},
-	func = function(pname, param)
-		if not param or param=="" then
-			local pvolume=tonumber(mpd.storage:get_string("vol_"..pname))
-			if not pvolume then pvolume=1 end
-			if pvolume>0 then
-				return true, "Your music volume is set to "..pvolume.."."
-			else
-				if mpd.handles[pname] then
-					minetest.sound_stop(mpd.handles[pname])
-				end
-				return true, "Background music is disabled for you. Use '/mvolume 1' to enable it again."
-			end
-		end
-		local pvolume=tonumber(param)
-		if not pvolume then
-			return false, "Invalid usage: /mvolume [volume level (0-1)]"
-		end
-		pvolume = math.min(pvolume, 1)
-		pvolume = math.max(pvolume, 0)
-		mpd.storage:set_string("vol_"..pname, pvolume)
-		if pvolume>0 then
-			return true, "Music volume set to "..pvolume..". Change will take effect when the next song starts."
-		else
-			if mpd.handles[pname] then
-				minetest.sound_stop(mpd.handles[pname])
-			end
-			return true, "Disabled background music for you. Use /mvolume to enable it again."
-		end
-	end,		
-})
-
-if vote then
-	dofile(mpd.modpath..DIR_DELIM.."vote.lua")
 end
