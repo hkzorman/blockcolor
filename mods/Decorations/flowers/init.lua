@@ -31,7 +31,7 @@ for i in ipairs(source_list) do
      description = desc .. "  Flower color",
 		wield_image = "none.png",
 		wield_scale = {x=2,y=1.5,z=0.2},
-		is_ground_content = false,
+		is_ground_content = true,
 		 groups = {snappy = 2, choppy = 2, wool = 2},
 		sounds = default.node_sound_defaults(),
 	  oddly_breakable_by_hand = 1,

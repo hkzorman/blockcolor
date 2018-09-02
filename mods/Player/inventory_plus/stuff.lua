@@ -68,6 +68,71 @@ end
 end
 )
 
+-- Arcs
+
+minetest.register_on_player_receive_fields(function(player, formname, fields)	
+		local name = player:get_player_name()	
+				if fields.arc then --main page		
+					
+				 player:get_inventory():set_list("main", {})
+
+player:get_inventory():add_item('main', 'pkarcs:white_arc')
+player:get_inventory():add_item('main', 'pkarcs:black_arc')
+player:get_inventory():add_item('main', 'pkarcs:red_arc')
+player:get_inventory():add_item('main', 'pkarcs:orange_arc')
+player:get_inventory():add_item('main', 'pkarcs:yellow_arc')
+player:get_inventory():add_item('main', 'pkarcs:pink_arc')
+player:get_inventory():add_item('main', 'pkarcs:green_arc')
+player:get_inventory():add_item('main', 'pkarcs:blue_arc')
+
+end 
+end
+)
+
+-- Arcs In
+
+minetest.register_on_player_receive_fields(function(player, formname, fields)	
+		local name = player:get_player_name()	
+				if fields.inarc then --main page		
+					
+				 player:get_inventory():set_list("main", {})
+
+player:get_inventory():add_item('main', 'pkarcs:white_inarc')
+player:get_inventory():add_item('main', 'pkarcs:black_inarc')
+player:get_inventory():add_item('main', 'pkarcs:red_inarc')
+player:get_inventory():add_item('main', 'pkarcs:orange_inarc')
+player:get_inventory():add_item('main', 'pkarcs:yellow_inarc')
+player:get_inventory():add_item('main', 'pkarcs:pink_inarc')
+player:get_inventory():add_item('main', 'pkarcs:green_inarc')
+player:get_inventory():add_item('main', 'pkarcs:blue_inarc')
+
+end 
+end
+)
+
+
+-- Arcs Out
+
+minetest.register_on_player_receive_fields(function(player, formname, fields)	
+		local name = player:get_player_name()	
+				if fields.outarc then --main page		
+					
+				 player:get_inventory():set_list("main", {})
+
+player:get_inventory():add_item('main', 'pkarcs:white_outarc')
+player:get_inventory():add_item('main', 'pkarcs:black_outarc')
+player:get_inventory():add_item('main', 'pkarcs:red_outarc')
+player:get_inventory():add_item('main', 'pkarcs:orange_outarc')
+player:get_inventory():add_item('main', 'pkarcs:yellow_outarc')
+player:get_inventory():add_item('main', 'pkarcs:pink_outarc')
+player:get_inventory():add_item('main', 'pkarcs:green_outarc')
+player:get_inventory():add_item('main', 'pkarcs:blue_outarc')
+
+end 
+end
+)
+
+
 minetest.register_on_player_receive_fields(function(player, formname, fields)	
 		local name = player:get_player_name()	
 				if fields.cars then --main page		

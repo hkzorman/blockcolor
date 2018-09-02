@@ -119,6 +119,13 @@ inventory_plus.get_formspec = function(player, page)
 .. "label[7.1,3;Corner a]"
  .. "image_button_exit[0.1,4;1,1;cornerb.png;incorner;]"
 .. "label[0.1,5;Corner b]"
+ .. "image_button_exit[1.1,4;1,1;arc.png;arc;]"
+.. "label[1.3,5;Arc]"
+ .. "image_button_exit[2.1,4;1,1;arcin.png;inarc;]"
+.. "label[2.1,5;Arc In]"
+ .. "image_button_exit[3.1,4;1,1;arcout.png;outarc;]"
+.. "label[3.1,5;Arc Out]"
+
  .. "image_button_exit[6,5;1,1;rotate.png;rotate;]"
 .. "label[6.1,6;Rotate]"
  .. "image_button_exit[7,5;1,1;nones.png;none;]"
