@@ -68,6 +68,49 @@ end
 end
 )
 
+-- FullPipe
+
+minetest.register_on_player_receive_fields(function(player, formname, fields)	
+		local name = player:get_player_name()	
+				if fields.fullpipe then --main page		
+					
+				 player:get_inventory():set_list("main", {})
+
+player:get_inventory():add_item('main', 'fullpipe:block_white')
+player:get_inventory():add_item('main', 'fullpipe:block_black')
+player:get_inventory():add_item('main', 'fullpipe:block_red')
+player:get_inventory():add_item('main', 'fullpipe:block_orange')
+player:get_inventory():add_item('main', 'fullpipe:block_yellow')
+player:get_inventory():add_item('main', 'fullpipe:block_pink')
+player:get_inventory():add_item('main', 'fullpipe:block_green')
+player:get_inventory():add_item('main', 'fullpipe:block_blue')
+
+end 
+end
+)
+
+-- FullPipe
+
+minetest.register_on_player_receive_fields(function(player, formname, fields)	
+		local name = player:get_player_name()	
+				if fields.fullpipeborder then --main page		
+					
+				 player:get_inventory():set_list("main", {})
+
+player:get_inventory():add_item('main', 'fullpipe:border_white')
+player:get_inventory():add_item('main', 'fullpipe:border_black')
+player:get_inventory():add_item('main', 'fullpipe:border_red')
+player:get_inventory():add_item('main', 'fullpipe:border_orange')
+player:get_inventory():add_item('main', 'fullpipe:border_yellow')
+player:get_inventory():add_item('main', 'fullpipe:border_pink')
+player:get_inventory():add_item('main', 'fullpipe:border_green')
+player:get_inventory():add_item('main', 'fullpipe:border_blue')
+
+end 
+end
+)
+
+
 -- Arcs
 
 minetest.register_on_player_receive_fields(function(player, formname, fields)	

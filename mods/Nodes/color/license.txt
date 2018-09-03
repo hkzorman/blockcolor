@@ -1,3 +1,16 @@
+License for Textures Peak : CCO
+
+color_yellow.png
+color_orange.png
+color_blue.png
+color_green.png
+color_pink.png
+color_red.png
+color_white.png
+color_black.png
+
+https://creativecommons.org/publicdomain/zero/1.0/deed.fr
+
 License of source code
 ----------------------
 

@@ -125,13 +125,19 @@ inventory_plus.get_formspec = function(player, page)
 .. "label[2.1,5;Arc In]"
  .. "image_button_exit[3.1,4;1,1;arcout.png;outarc;]"
 .. "label[3.1,5;Arc Out]"
+ .. "image_button_exit[4.1,4;1,1;fullpipe.png;fullpipe;]"
+.. "label[4.3,5;Pipe]"
+ .. "image_button_exit[5.1,4;1,1;fullpipeborder.png;fullpipeborder;]"
+.. "label[5.1,5;Pipe-B]"
 
- .. "image_button_exit[6,5;1,1;rotate.png;rotate;]"
-.. "label[6.1,6;Rotate]"
- .. "image_button_exit[7,5;1,1;nones.png;none;]"
-.. "label[7.1,6;None]"
+ .. "image_button[0.1,6;1,1;gauche.png;main;]"
+.. "label[0.1,7;Back]"
+ .. "image_button_exit[1.1,6;1,1;rotate.png;rotate;]"
+.. "label[1.1,7;Rotate]"
+ .. "image_button_exit[2.1,6;1,1;nones.png;none;]"
+.. "label[2.1,7;None]"
 .. ""
-.. "button[0.0,7;2,1;main;Back]"
+
 	end
 	
 -- furnitures page
@@ -161,12 +167,13 @@ if page == "furnitures" then
 .. "label[5.1,1;Flowers]"
  .. "image_button_exit[6,0;1,1;cars.png;cars;]"
 .. "label[6.25,1;Cars]"
- .. "image_button_exit[6,5;1,1;rotate.png;rotate;]"
-.. "label[6.1,6;Rotate]"
- .. "image_button_exit[7,5;1,1;nones.png;none;]"
-.. "label[7.1,6;None]"
+ .. "image_button[0.1,6;1,1;gauche.png;main;]"
+.. "label[0.1,7;Back]"
+ .. "image_button_exit[1.1,6;1,1;rotate.png;rotate;]"
+.. "label[1.1,7;Rotate]"
+ .. "image_button_exit[2.1,6;1,1;nones.png;none;]"
+.. "label[2.1,7;None]"
 .. ""
-.. "button[0.0,7;2,1;main;Back]"
 	end
 
 
@@ -185,8 +192,10 @@ if page == "planets" then
 .. "label[1.1,1;Moon]"
  .. "image_button_exit[0,0;1,1;earth.png;earth;]"
 .. "label[0.1,1;Earth]"
+ .. "image_button[0.1,6;1,1;gauche.png;main;]"
+.. "label[0.1,7;Back]"
+
 .. ""
-.. "button[0.0,7;2,1;main;Back]"
 
 	end
 	

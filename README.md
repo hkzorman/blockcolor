@@ -19,5 +19,10 @@ Blockcolor License Gpl 2.1 for code and Cc By SA 3.0 for medias.
 * Furnitures Mod : Gerold55
 * Slope and Extras (Merge) : Nigel 
 * DriftCar : Paramat
+* 16px Textures : Peak
 
-* Minetest_Game Mods :  Minetest Team (Look readme or license in mod directory).
+
+### Else Problem with Licenses or Forbidden Names, Send me a Mp to Forum Minetest.net.
+
+
+* Minetest_Game Mods :  Minetest Team and Community (Look readme or license in mod directory).
