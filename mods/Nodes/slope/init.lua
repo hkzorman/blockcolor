@@ -105,6 +105,34 @@ for i in ipairs(source_list) do
 	local green = source_list[i][5]
 	local blue = source_list[i][6]	
 
+ minetest.register_node("slope:edge_" .. name, {
+ 	description = desc .. "edge",
+wield_image = "none.png",
+inventory_image = "edge.png^[colorize:#"..colour..":70",
+ 	drawtype = "mesh",
+ 	mesh = "slope_test_quarter_round_onetexture.obj",
+ 	 tiles = {"color_"..name..".png"},
+ 	paramtype = "light",
+ 	paramtype2 = "facedir",
+ 	groups = {cracky=3, oddly_breakable_by_hand=2},
+	sounds = default.node_sound_stone_defaults(),
+ 	on_place = minetest.rotate_node,
+ })
+
+minetest.register_node("slope:edgecorner_" .. name, {
+ 	description = desc .. "edge",
+wield_image = "none.png",
+inventory_image = "edgecorner.png^[colorize:#"..colour..":70",
+ 	drawtype = "mesh",
+ 	mesh = "slope_test_quarter_round_corner_onetexture.obj",
+ 	 tiles = {"color_"..name..".png"},
+ 	paramtype = "light",
+ 	paramtype2 = "facedir",
+ 	groups = {cracky=3, oddly_breakable_by_hand=2},
+	sounds = default.node_sound_stone_defaults(),
+ 	on_place = minetest.rotate_node,
+ })
+
 minetest.register_node("slope:slope_"..name, {
         description = desc.. " slope",
 wield_image = "none.png",
