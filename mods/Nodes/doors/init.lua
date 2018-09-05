@@ -468,7 +468,9 @@ for i in ipairs(source_list) do
 	local blue = source_list[i][6]	
 
 doors.register("door_" .. name , {
-		tiles = {"doors_door_" .. name .. ".png"},
+
+alpha = 200,
+		tiles = {"doors_door_white.png^[colorize:#"..colour..":70"},
 		description = name .. "Door",
 wield_image = "none.png",
 wield_scale = {x=2,y=1.5,z=0.2},

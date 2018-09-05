@@ -24,5 +24,11 @@ Blockcolor License Gpl 2.1 for code and Cc By SA 3.0 for medias.
 
 ### Else Problem with Licenses or Forbidden Names, Send me a Mp to Forum Minetest.net.
 
-
 * Minetest_Game Mods :  Minetest Team and Community (Look readme or license in mod directory).
+
+
+### EveryOne
+
+The life is not easy, but to build a game for Minetest is a real pleasure. 
+
+Thus even if I am poor, I hope that thanks to this small game, I give a little of happiness, it costs me nothing and I have nothing else to offer that this wealth which cannot be bought. Thanks to the team of Minetest to have shared Minetest Engine so that I can share and create Blockcolor. It allows me to leave a little of me, if I come for a reason or an other one not to exist any more. Thanks to the people who help me build this game, improve it or even play it.
