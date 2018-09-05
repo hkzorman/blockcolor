@@ -129,9 +129,9 @@ inventory_plus.get_formspec = function(player, page)
 .. "label[4.3,5;Pipe]"
  .. "image_button_exit[5.1,4;1,1;fullpipeborder.png;fullpipeborder;]"
 .. "label[5.1,5;Pipe-B]"
- .. "image_button[6.1,4;1,1;edge.png;edge;]"
+ .. "image_button_exit[6.1,4;1,1;edge.png;edge;]"
 .. "label[6.1,5;Edge-A]"
-.. "image_button[7.1,4;1,1;edgecorner.png;edgecorner;]"
+.. "image_button_exit[7.1,4;1,1;edgecorner.png;edgecorner;]"
 .. "label[7.1,5;Edge-B]"
 
  .. "image_button[0.1,6;1,1;gauche.png;main;]"
@@ -156,17 +156,11 @@ inventory_plus.get_formspec = function(player, page)
 
 		 formspec = formspec
 
- .. "image_button_exit[0,0;1,1;nconeedge.png;nconeedge;]"
- .. "label[0.1,1;EdgeOne]"
+-- .. "image_button_exit[2,0;1,1;nctwoedge.png;nct;]"
+-- .. "label[2.1,1;Node-T]"
 
- .. "image_button_exit[1,0;1,1;nctwoedge.png;nctwoedge;]"
- .. "label[1.1,1;EdgeTwo]"
-
- .. "image_button_exit[2,0;1,1;nctwoedge.png;nct;]"
- .. "label[2.1,1;Node-T]"
-
- .. "image_button_exit[3,0;1,1;nccross.png;nccross;]"
- .. "label[3.1,1;Cross]"
+-- .. "image_button_exit[3,0;1,1;nccross.png;nccross;]"
+-- .. "label[3.1,1;Cross]"
 
  .. "image_button[0.1,6;1,1;gauche.png;nodes;]"
 .. "label[0.1,7;Back]"
@@ -206,6 +200,10 @@ if page == "furnitures" then
 .. "label[5.1,1;Flowers]"
  .. "image_button_exit[6,0;1,1;cars.png;cars;]"
 .. "label[6.25,1;Cars]"
+.. "image_button_exit[7,0;1,1;computer.png;computers;]"
+.. "label[7.25,1;PCs]"
+.. "image_button_exit[0,2;1,1;desk.png;desks;]"
+.. "label[0.25,3;Desks]"
  .. "image_button[0.1,6;1,1;gauche.png;main;]"
 .. "label[0.1,7;Back]"
  .. "image_button_exit[1.1,6;1,1;rotate.png;rotate;]"

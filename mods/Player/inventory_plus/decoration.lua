@@ -1,3 +1,47 @@
+
+-- Computers 
+
+minetest.register_on_player_receive_fields(function(player, formname, fields)	
+		local name = player:get_player_name()	
+				if fields.computers then --main page		
+					
+				 player:get_inventory():set_list("main", {})
+
+player:get_inventory():add_item('main', 'hdb:computerwhite')
+player:get_inventory():add_item('main', 'hdb:computerblack')
+player:get_inventory():add_item('main', 'hdb:computerred')
+player:get_inventory():add_item('main', 'hdb:computerorange')
+player:get_inventory():add_item('main', 'hdb:computeryellow')
+player:get_inventory():add_item('main', 'hdb:computerpink')
+player:get_inventory():add_item('main', 'hdb:computergreen')
+player:get_inventory():add_item('main', 'hdb:computerblue')
+
+end 
+end
+)
+
+
+-- Desks
+
+minetest.register_on_player_receive_fields(function(player, formname, fields)	
+		local name = player:get_player_name()	
+				if fields.desks then --main page		
+					
+				 player:get_inventory():set_list("main", {})
+
+player:get_inventory():add_item('main', 'hdb:deskwhite')
+player:get_inventory():add_item('main', 'hdb:deskblack')
+player:get_inventory():add_item('main', 'hdb:deskred')
+player:get_inventory():add_item('main', 'hdb:deskorange')
+player:get_inventory():add_item('main', 'hdb:deskyellow')
+player:get_inventory():add_item('main', 'hdb:deskpink')
+player:get_inventory():add_item('main', 'hdb:deskgreen')
+player:get_inventory():add_item('main', 'hdb:deskblue')
+
+end 
+end
+)
+
 -- Cars 
 
 minetest.register_on_player_receive_fields(function(player, formname, fields)	
