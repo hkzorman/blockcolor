@@ -1,3 +1,5 @@
+local desk_cbox = {	type = "fixed",	fixed = { -0.5, -0.5, -0.5, 1.5, 0.5, 0.5 }}
+
 -- HomeDecor Blockcolor
 
 local source_list = {
@@ -29,6 +31,8 @@ minetest.register_node("hdb:desk" .. color, {
 		wield_scale = {x=2,y=1.5,z=0.2},
 	 paramtype = "light",
 	paramtype2 = "facedir",
+collision_box = desk_cbox,
+   selection_box = desk_cbox,
 	 groups = {cracky=3, oddly_breakable_by_hand=2},
 	sounds = default.node_sound_stone_defaults(),
  	on_place = minetest.rotate_node,
