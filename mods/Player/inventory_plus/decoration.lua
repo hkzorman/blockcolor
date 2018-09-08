@@ -1,3 +1,66 @@
+-- Frigos
+
+minetest.register_on_player_receive_fields(function(player, formname, fields)	
+		local name = player:get_player_name()	
+				if fields.frigo then --main page		
+					
+				 player:get_inventory():set_list("main", {})
+
+player:get_inventory():add_item('main', 'hdb:frigowhite')
+player:get_inventory():add_item('main', 'hdb:frigoblack')
+player:get_inventory():add_item('main', 'hdb:frigored')
+player:get_inventory():add_item('main', 'hdb:frigoorange')
+player:get_inventory():add_item('main', 'hdb:frigoyellow')
+player:get_inventory():add_item('main', 'hdb:frigopink')
+player:get_inventory():add_item('main', 'hdb:frigogreen')
+player:get_inventory():add_item('main', 'hdb:frigoblue')
+
+end 
+end
+)
+
+-- Cabinets
+
+minetest.register_on_player_receive_fields(function(player, formname, fields)	
+		local name = player:get_player_name()	
+				if fields.armoire then --main page		
+					
+				 player:get_inventory():set_list("main", {})
+
+player:get_inventory():add_item('main', 'hdb:armoirewhite')
+player:get_inventory():add_item('main', 'hdb:armoireblack')
+player:get_inventory():add_item('main', 'hdb:armoirered')
+player:get_inventory():add_item('main', 'hdb:armoireorange')
+player:get_inventory():add_item('main', 'hdb:armoireyellow')
+player:get_inventory():add_item('main', 'hdb:armoirepink')
+player:get_inventory():add_item('main', 'hdb:armoiregreen')
+player:get_inventory():add_item('main', 'hdb:armoireblue')
+
+end 
+end
+)
+
+-- Benchs
+
+minetest.register_on_player_receive_fields(function(player, formname, fields)	
+		local name = player:get_player_name()	
+				if fields.bench then --main page		
+					
+				 player:get_inventory():set_list("main", {})
+
+player:get_inventory():add_item('main', 'hdb:benchwhite')
+player:get_inventory():add_item('main', 'hdb:benchblack')
+player:get_inventory():add_item('main', 'hdb:benchred')
+player:get_inventory():add_item('main', 'hdb:benchorange')
+player:get_inventory():add_item('main', 'hdb:benchyellow')
+player:get_inventory():add_item('main', 'hdb:benchpink')
+player:get_inventory():add_item('main', 'hdb:benchgreen')
+player:get_inventory():add_item('main', 'hdb:benchblue')
+
+end 
+end
+)
+
 
 -- Computers 
 
