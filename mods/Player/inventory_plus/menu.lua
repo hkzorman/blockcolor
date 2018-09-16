@@ -210,6 +210,9 @@ if page == "furnitures" then
 .. "label[2.1,3;Cabinets]"
 .. "image_button_exit[3,2;1,1;frigo.png;frigo;]"
 .. "label[3.1,3;Frigos]"
+-- Add trampoline
+.. "image_button_exit[4,2;1,1;trampo.png;trampoline;]"
+.. "label[4,3;Trampoline]"
 
  .. "image_button[0.1,6;1,1;gauche.png;main;]"
 .. "label[0.1,7;Back]"
