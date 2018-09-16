@@ -251,3 +251,23 @@ player:get_inventory():add_item('main', 'flowers:blue')
 end 	
 end
 )
+
+-- Trampoline
+minetest.register_on_player_receive_fields(function(player, formname, fields)	
+		local name = player:get_player_name()	
+				if fields.trampoline then --main page		
+					
+				 player:get_inventory():set_list("main", {})
+					 
+player:get_inventory():add_item('main', 'trampoline:trampoline_white')
+player:get_inventory():add_item('main', 'trampoline:trampoline_black')
+player:get_inventory():add_item('main', 'trampoline:trampoline_red')
+player:get_inventory():add_item('main', 'trampoline:trampoline_orange')
+player:get_inventory():add_item('main', 'trampoline:trampoline_yellow')
+player:get_inventory():add_item('main', 'trampoline:trampoline_pink')
+player:get_inventory():add_item('main', 'trampoline:trampoline_green')
+player:get_inventory():add_item('main', 'trampoline:trampoline_blue') 						
+
+end 	
+end
+)
