@@ -1,7 +1,6 @@
--- Carpet Mod!
--- By Jordan Snelling 2012
--- License LGPL
--- This mod adds carpets into Minetest.
+-- Trampoline mod by Zorman2000
+-- Code based on carpets mod included in BlockColor and a modification
+-- of the original trampoline node found on xdecor mod by kilbith
 
 local dyes = {
 	{"black", "Darkened", "292421"}, 
